@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
     <title> Seus dados! </title>
-    
 </head>
 <body>
 
@@ -18,7 +17,7 @@
     <h1> Edite seus dados </h1>
 
 <!-- Form - Inicio do formulario -->
-    <form class="form-horizontal" method="POST" action="../controllers/caminhoneiro.php?acao=salvar_editar">
+    <form class="form-horizontal" method="POST" action="../../controllers/caminhoneiro.php?acao=salvar_editar">
 
         <fieldset><!-- conjunto de campos -->
 

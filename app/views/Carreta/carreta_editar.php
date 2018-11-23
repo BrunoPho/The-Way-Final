@@ -22,92 +22,40 @@
 
         <fieldset><!-- conjunto de campos -->
 
-
             <input type="hidden" name="id_caminhoneiro" value="<?= $_GET['id_caminhoneiro'] ?>">
 
-            <!-- Text input (Nome)-->
+            <!-- Text input (cod_carreta)-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="nome"></label>
+                <label class="col-md-4 control-label" for="cod_carreta"></label>
                 <div class="col-md-4">
-                    <input value="<?= $caminhoneiro['nome'] ?>" id="nome" name="nome" type="text" placeholder="Nome" class="form-control input-md" required="" title="Preencha com seu primeiro">
+                    <input value="<?= $caminhoneiro['cod_carreta'] ?>" id="cod_carreta" name="cod_carreta" type="number" placeholder="Código da carreta" class="form-control input-md" required="" title="Preencha com o número da placa da carreta">
                 </div>
             </div>
 
-            <!-- Text input (Email)-->
+            <!-- Text input (ano_fabricacao)-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="email"></label>
+                <label class="col-md-4 control-label" for="ano_fabricacao"></label>
                 <div class="col-md-4">
-                    <input value="<?= $caminhoneiro['email'] ?>" id="email" name="email" type="email" placeholder="E-mail" class="form-control input-md" required="" title="Preencha com seu G-mail ou E-mail">
+                    <input value="<?= $caminhoneiro['ano_fabricacao'] ?>" id="ano_fabricacao" name="ano_fabricacao" type="number" placeholder="Ano de fabricação da carreta" class="form-control input-md" required="" title="Preencha com o ano de fabricação da carreta">
                 </div>
             </div>
 
-            <!-- Text input (Telefone)-->
+            <!-- Text input (ano_modelo)-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="telefone"></label>
+                <label class="col-md-4 control-label" for="ano_modelo"></label>
                 <div class="col-md-4">
-                    <input value="<?= $caminhoneiro['telefone'] ?>" id="telefone" name="telefone" type="tel" pattern="^\d{2}\d{5}\d{4}$" placeholder="Telefone" class="form-control input-md" required="" title="Digite seu numero de telefone (DD)XXXX-XXXX">
+                    <input value="<?= $caminhoneiro['ano_modelo'] ?>" id="ano_modelo" name="ano_modelo" type="number" pattern="" placeholder="Ano do modelo da carreta" class="form-control input-md" required="" title="Preencha com o ano do modelo da carreta">
                 </div>
             </div>
 
-            <!-- Password input (Senha)-->
+            <!-- Text input (cod_produto) TODO "Será passado pela tabela tipo_produto"-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="senha"></label>
+                <label class="col-md-4 control-label" for="cod_produto"></label>
                 <div class="col-md-4">
-                    <input value="<?= $caminhoneiro['senha'] ?>" id="senha" name="senha" type="password" placeholder="Senha" class="form-control input-md" required="">
+                    <input value="<?= $caminhoneiro['cod_produto'] ?>" id="cod_produto" name="cod_produto" type="number" placeholder="Código do produto" class="form-control input-md" required="">
 
                 </div>
             </div>
-
-
-            <!-- Text input (rg)-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="rg"></label>
-                <div class="col-md-4">
-                    <input value="<?= $caminhoneiro['rg'] ?>" id="rg" name="rg" type="number" placeholder="RG" class="form-control input-md" required="">
-
-                </div>
-            </div>
-
-            <!-- Text input (cpf)-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="cpf"></label>
-                <div class="col-md-4">
-                    <input value="<?= $caminhoneiro['cpf'] ?>" id="cpf" name="cpf" type="number" placeholder="CPF" class="form-control input-md" required="">
-                </div>
-                <!-- Text input (cidade)-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="cidade"></label>
-                    <div class="col-md-4">
-                        <input value="<?= $caminhoneiro['cod_cidade'] ?>" id="cidade" name="cidade" type="text" placeholder="Cidade" class="form-control input-md" required="">
-
-                    </div>
-                </div>
-                <!-- Text input (num_antt)-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="num_antt"></label>
-                    <div class="col-md-4">
-                        <input value="<?= $caminhoneiro['num_antt'] ?>" id="num_antt" name="num_antt" type="number" placeholder="Numero da A.N.T.T." class="form-control input-md" required="">
-
-                    </div>
-                </div>
-
-                <!-- Text input (num_cnh)-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="num_cnh"></label>
-                    <div class="col-md-4">
-                        <input value="<?= $caminhoneiro['num_cnh'] ?>" id="num_cnh" name="num_cnh" type="number" placeholder="Numero do C.N.H." class="form-control input-md" required="">
-
-                    </div>
-                </div>
-
-                <!-- Text input (categoria_cnh)-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="categoria_cnh"></label>
-                    <div class="col-md-4">
-                        <input value="<?= $caminhoneiro['categoria_cnh'] ?>" id="categoria_cnh" name="categoria_cnh" type="text" placeholder="Categoria do C.N.H." class="form-control input-md" required="">
-
-                    </div>
-                </div>
 
                 <!-- Botões -->
                 <!-- Button (Double) - Botão (Cancelar) -->

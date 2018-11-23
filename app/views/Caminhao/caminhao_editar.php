@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -21,90 +21,64 @@
     <form class="form-horizontal" method="POST" action="../controllers/caminhao.php?acao=salvar_editar">
 
         <fieldset><!-- conjunto de campos -->
+<!-- cod_caminhao, ano_modelo, ano_fabricacao, capacidade, cod_modelo, cod_tipo, cod_caminhoneiro -->
 
+            <input type="hidden" name="id_caminhao" required="<?= $_GET['id_caminhao'] ?>">
 
-            <input type="hidden" name="id_caminhao" value="<?= $_GET['id_caminhao'] ?>">
-
-            <!-- Text input (Nome)-->
+             <!-- Text input (cod_caminhao)-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="nome"></label>
+                <label class="col-md-4 control-label" for="cod_caminhao"></label>
                 <div class="col-md-4">
-                    <input value="<?= $caminhao['nome'] ?>" id="nome" name="nome" type="text" placeholder="Nome" class="form-control input-md" required="" title="Preencha com seu primeiro">
+                    <input id="cod_caminhao" name="cod_caminhao" type="number" placeholder="Código do caminhao" class="form-control input-md" value="<?= $caminhao['cod_caminhao'] ?>" title="">
                 </div>
             </div>
 
-            <!-- Text input (Email)-->
+            <!-- Text input (ano_modelo)-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="email"></label>
+                <label class="col-md-4 control-label" for="ano_modelo"></label>
                 <div class="col-md-4">
-                    <input value="<?= $caminhao['email'] ?>" id="email" name="email" type="email" placeholder="E-mail" class="form-control input-md" required="" title="Preencha com seu G-mail ou E-mail">
+                    <input id="ano_modelo" name="ano_modelo" type="number" placeholder="Ano do modelo" class="form-control input-md" value="<?= $caminhao['ano_modelo'] ?>" title="Preencha com o ano do modelo de seu caminhão">
                 </div>
             </div>
 
-            <!-- Text input (Telefone)-->
+            <!-- Text input (ano_fabricacao)-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="telefone"></label>
+                <label class="col-md-4 control-label" for="ano_fabricacao"></label>
                 <div class="col-md-4">
-                    <input value="<?= $caminhao['telefone'] ?>" id="telefone" name="telefone" type="tel" pattern="^\d{2}\d{5}\d{4}$" placeholder="Telefone" class="form-control input-md" required="" title="Digite seu numero de telefone (DD)XXXX-XXXX">
+                    <input id="ano_fabricacao" name="ano_fabricacao" type="number" pattern="" placeholder="ano_fabricacao" class="form-control input-md" value="<?= $caminhao['ano_fabricacao'] ?>" title="Digite o ano de fabricacao de seu caminhão">
                 </div>
             </div>
 
-            <!-- Password input (Senha)-->
+            <!-- Text input (capacidade)-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="senha"></label>
+                <label class="col-md-4 control-label" for="capacidade"></label>
                 <div class="col-md-4">
-                    <input value="<?= $caminhao['senha'] ?>" id="senha" name="senha" type="password" placeholder="Senha" class="form-control input-md" required="">
-
-                </div>
-            </div>
-
-
-            <!-- Text input (rg)-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="rg"></label>
-                <div class="col-md-4">
-                    <input value="<?= $caminhao['rg'] ?>" id="rg" name="rg" type="number" placeholder="RG" class="form-control input-md" required="">
+                    <input id="capacidade" name="capacidade" type="number" placeholder="Capacidade de carga do seu caminhão" class="form-control input-md" value="<?= $caminhao['capacidade'] ?>">
 
                 </div>
             </div>
 
-            <!-- Text input (cpf)-->
+            <!-- Text input (cod_modelo)-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="cpf"></label>
+                <label class="col-md-4 control-label" for="cod_modelo"></label>
                 <div class="col-md-4">
-                    <input value="<?= $caminhao['cpf'] ?>" id="cpf" name="cpf" type="number" placeholder="CPF" class="form-control input-md" required="">
+                    <input id="cod_modelo" name="cod_modelo" type="number" placeholder="Código de modelo" class="form-control input-md" value="<?= $caminhao['cod_modelo'] ?">
+
                 </div>
-                <!-- Text input (cidade)-->
+            </div>
+
+            <!-- Text input (cod_tipo)-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="cod_tipo"></label>
+                <div class="col-md-4">
+                    <input id="cod_tipo" name="cod_tipo" type="number" placeholder="Código do tipo de caminhão" class="form-control input-md" value="<?= $caminhao['cod_tipo'] ?>">
+                </div>
+
+                <!-- Text input (cod_caminhoneiro) TODO "Não modicavel, vem junto" -->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="cidade"></label>
+                    <label class="col-md-4 control-label" for="cod_caminhoneiro"></label>
                     <div class="col-md-4">
-                        <input value="<?= $caminhao['cod_cidade'] ?>" id="cidade" name="cidade" type="text" placeholder="Cidade" class="form-control input-md" required="">
-
-                    </div>
-                </div>
-                <!-- Text input (num_antt)-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="num_antt"></label>
-                    <div class="col-md-4">
-                        <input value="<?= $caminhao['num_antt'] ?>" id="num_antt" name="num_antt" type="number" placeholder="Numero da A.N.T.T." class="form-control input-md" required="">
-
-                    </div>
-                </div>
-
-                <!-- Text input (num_cnh)-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="num_cnh"></label>
-                    <div class="col-md-4">
-                        <input value="<?= $caminhao['num_cnh'] ?>" id="num_cnh" name="num_cnh" type="number" placeholder="Numero do C.N.H." class="form-control input-md" required="">
-
-                    </div>
-                </div>
-
-                <!-- Text input (categoria_cnh)-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="categoria_cnh"></label>
-                    <div class="col-md-4">
-                        <input value="<?= $caminhao['categoria_cnh'] ?>" id="categoria_cnh" name="categoria_cnh" type="text" placeholder="Categoria do C.N.H." class="form-control input-md" required="">
+                        <input id="cod_caminhoneiro" name="cod_caminhoneiro" type="number" placeholder="Código do caminhoneiro" class="form-control input-md" value="<?= $caminhao['cod_cidade'] ?>">
 
                     </div>
                 </div>
@@ -127,3 +101,11 @@
 
 </body>
 </html>
+
+<?= $caminhao['cod_caminhao'] ?>
+<?= $caminhao['ano_modelo'] ?>
+<?= $caminhao['ano_fabricacao'] ?>
+<?= $caminhao['capacidade'] ?>
+<?= $caminhao['cod_modelo'] ?>
+<?= $caminhao['cod_tipo'] ?>
+<?= $caminhao['cod_cidade'] ?>

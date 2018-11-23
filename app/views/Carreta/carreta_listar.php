@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -8,31 +8,24 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-    <title> Hello, Caminhoneiros! </title>
+    <title> Carretas! </title>
 
 </head>
 <body>
 
 <div class="container">
 
-    <p><h1> Lista caminhoneiros </h1></p>
+    <p><h1> Lista de carretas </h1></p>
 
     <table class="table">
         <thead>
         <tr>
-            <th scope="col"> Código        </th>
-            <th scope="col"> nome          </th>
-            <th scope="col"> email         </th>
-            <th scope="col"> telefone      </th>
-            <th scope="col"> senha         </th>
-            <th scope="col"> razao_social  </th>
-            <th scope="col"> cnpj          </th>
-            <th scope="col"> num_antt      </th>
-            <th scope="col"> num_cnh       </th>
-            <th scope="col"> categoria_cnh </th>
-            <th scope="col"> cidade        </th>
-            <th scope="col">     #         </th>
-            <th scope="col">     #         </th>
+            <th scope="col"> cod_carreta    </th>
+            <th scope="col"> ano_fabricacao </th>
+            <th scope="col"> ano_modelo     </th>
+            <th scope="col"> cod_produto    </th>
+            <th scope="col">     #          </th>
+            <th scope="col">     #          </th>
         </tr>
         </thead>
         <tbody>
@@ -40,17 +33,10 @@
         <?php foreach ($listaCaminhoneiros as $caminhoneiro): ?>
 
             <tr>
-                <th scope="row"><?= $caminhoneiro['cod_caminhoneiro'] ?></th>
-                <td><?= $caminhoneiro['nome'] ?></td>
-                <td><?= $caminhoneiro['email'] ?></td>
-                <td><?= $caminhoneiro['telefone'] ?></td>
-                <td><?= $caminhoneiro['senha'] ?></td>
-                <td><?= $caminhoneiro['rg'] ?></td>
-                <td><?= $caminhoneiro['cpf'] ?></td>
-                <td><?= $caminhoneiro['num_antt'] ?></td>
-                <td><?= $caminhoneiro['num_cnh'] ?></td>
-                <td><?= $caminhoneiro['categoria_cnh'] ?></td>
-                <td><?= $caminhoneiro['cod_cidade'] ?></td>
+                <th scope="row"><?= $caminhoneiro['cod_carreta'] ?></th>
+                <td><?= $caminhoneiro['ano_fabricacao'] ?></td>
+                <td><?= $caminhoneiro['ano_modelo'] ?></td>
+                <td><?= $caminhoneiro['cod_produto'] ?></td>
                 <td><a class="btn btn-info"   href="http://localhost/TheWay2-master/app/controllers/caminhoneiro.php?acao=editar&id_caminhoneiro= <?= $caminhoneiro['cod_caminhoneiro'] ?>"> Editar  </a></td>
                 <td><a class="btn btn-danger" href="http://localhost/TheWay2-master/app/controllers/caminhoneiro.php?acao=excluir&id_caminhoneiro=<?= $caminhoneiro['cod_caminhoneiro'] ?>"> Excluir </a></td>
             </tr>
@@ -59,11 +45,7 @@
 
         </tbody>
     </table>
-
-
 </div>
-
-
 
 </body>
 </html>
