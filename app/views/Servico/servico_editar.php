@@ -129,7 +129,6 @@
                         <button class="btn btn-info" type="submit"> Atualizar </button>
                     </div>
                 </div>
-            </div>
 
         </fieldset>
     </form> <!-- /Form - Fim do formulario -->
@@ -138,6 +137,7 @@
 </body>
 </html>
 <!--
+
 <?/*= $caminhoneiro['numero_seguro'] */?>
 <?/*= $caminhoneiro['data_entrega'] */?>
 <?/*= $caminhoneiro['cod_servico'] */?>
