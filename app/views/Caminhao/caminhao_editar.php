@@ -18,7 +18,7 @@
     <h1> Edite seus dados </h1>
 
 <!-- Form - Inicio do formulario -->
-    <form class="form-horizontal" method="POST" action="../controllers/caminhao.php?acao=salvar_editar">
+    <form class="form-horizontal" method="POST" action="../../controllers/caminhao.php?acao=salvar_editar">
 
         <fieldset><!-- conjunto de campos -->
 <!-- cod_caminhao, ano_modelo, ano_fabricacao, capacidade, cod_modelo, cod_tipo, cod_caminhoneiro -->
@@ -62,8 +62,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="cod_modelo"></label>
                 <div class="col-md-4">
-                    <input id="cod_modelo" name="cod_modelo" type="number" placeholder="Código de modelo" class="form-control input-md" value="<?= $caminhao['cod_modelo'] ?">
-
+                    <input id="cod_modelo" name="cod_modelo" type="number" placeholder="Código de modelo" class="form-control input-md" value="<?= $caminhao['cod_modelo'] ?>">
                 </div>
             </div>
 
