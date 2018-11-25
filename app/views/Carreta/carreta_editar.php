@@ -18,7 +18,7 @@
     <h1> Edite seus dados </h1>
 
     <!-- Form - Inicio do formulario -->
-    <form class="form-horizontal" method="POST" action="../controllers/caminhoneiro.php?acao=salvar_editar">
+    <form class="form-horizontal" method="POST" action="../../controllers/caminhoneiro.php?acao=salvar_editar">
 
         <fieldset><!-- conjunto de campos -->
 
@@ -67,7 +67,6 @@
                         <button class="btn btn-info" type="submit"> Atualizar </button>
                     </div>
                 </div>
-            </div>
 
         </fieldset>
     </form> <!-- /Form - Fim do formulario -->

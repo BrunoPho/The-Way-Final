@@ -63,12 +63,10 @@
                         <button class="btn btn-info" type="submit"> Enviar </button>
                     </div>
                 </div>
-            </div>
 
         </fieldset>
     </form> <!-- /Form - Fim do formulario -->
-</div>
-<!-- /container-->
+</div><!-- /container-->
 
 </body>
 </html>
