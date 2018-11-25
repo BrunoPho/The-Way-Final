@@ -77,14 +77,14 @@ session_start();
     <!-- /Form --></div>
 
 <!-- Botão para Home -->
-<center>
+<div style="text-align: center;">
     <div class="form-group">
         <label class=" control-label" type="botton1"></label>
         <div class="center">
             <a href="../../../index.html" class="btn btn-danger btn-lg active" role="button"> Cancelar </a>
         </div>
     </div>
-</center>
+</div>
 
 <!-- IE10 Corta a janela de Superfície/bug da área de trabalho do Windows 8 -->
 <script src="../../../assets/js/ie10-viewport-bug-workaround.js"></script>

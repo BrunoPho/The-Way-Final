@@ -1,12 +1,12 @@
-<html>
+<html lang="pt-br">
 <head>
   <title>Enviando E-mail com PHP - DevMedia</title>
-  <link rel="stylesheet" type="text/css" href="../../assets/css/meu_CSS/estilo.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/estilotw.css">
 
     <style type='text/css'>
         body {
-            margin:0px;
-            font-family:Verdane;
+            margin:0;
+            font-family: Verdane, serif;
             font-size:12px;
             color: #666666;
         }
@@ -29,34 +29,44 @@
           <tr>
             <td>Nome:<sup class="asteristico">*</sup></td>
             <td>
-              <input type="text" name="nome" maxlength="40" />
+                <label>
+                    <input type="text" name="nome" maxlength="40" />
+                </label>
             </td>
           </tr>
           <tr>
             <td>E-mail:<sup class="asteristico">*</sup></td>
             <td>
-              <input type="email" name="email" maxlength="30" />
+                <label>
+                    <input type="email" name="email" maxlength="30" />
+                </label>
             </td>
           </tr>
           <tr>
             <td>Telefone:<sup class="asteristico">*</sup></td>
             <td>
-              <input type="text" name="telefone" maxlength="14" />
+                <label>
+                    <input type="text" name="telefone" maxlength="14" />
+                </label>
             </td>
           </tr>
           <tr>
             <td>Opções:<sup class="asteristico">*</sup></td>
             <td>
-              <select name="escolhas" class="campo_input">
-                <option value="Opção 1">Opção 1</option>
-                <option value="Opção 2">Opção 2</option>
-              </select>
+                <label>
+                    <select name="escolhas" class="campo_input">
+                      <option value="Opção 1">Opção 1</option>
+                      <option value="Opção 2">Opção 2</option>
+                    </select>
+                </label>
             </td>
           </tr>
           <tr>
             <td>Mensagem:<sup class="asteristico">*</sup></td>
             <td>
-              <textarea name="msg" cols="16" rows="5"></textarea>
+                <label>
+                    <textarea name="msg" cols="16" rows="5"></textarea>
+                </label>
             </td>
           </tr>
           <tr align="right";>
@@ -93,8 +103,6 @@ $arquivo = "
     <tr>
         <td width='320'>Mensagem:$nome</td>
     </tr>
-    </td>
-    </tr>
     <tr>
         <td>Este e-mail foi enviado em <b>$data_envio</b> às <b>$hora_envio</b></td>
     </tr>
@@ -102,9 +110,9 @@ $arquivo = "
 </body>
 </html>
 
-<html>
+<html lang="pt-br">
      ";
-<html>
+</html>
 
 <?php
 //Variáveis
