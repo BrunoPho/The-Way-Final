@@ -2,9 +2,10 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-    <title></title>
+
   <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../../../assets/css/estilotw.css">
+
 </head>
 <body>
 <footer id="footer">
@@ -15,7 +16,7 @@
       </div>
       <div class="social-icons">
         <ul>
-          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="twitter" href="https://www.facebook.com/caminhoezinhos/"><i class="fa fa-twitter"></i></a></li>
           <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
           <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
         </ul>
@@ -29,7 +30,7 @@
           <p> &copy; 2018 The way. </p>
         </div>
         <div class="col-sm-6">
-          <p class="pull-right">Projetado por <a href="http://www.themeum.com/">Themeum</a></p>
+          <p class="pull-right"> Projetado por <a href="http://www.themeum.com/"> Themeum </a></p>
         </div>
       </div>
     </div>
@@ -45,5 +46,6 @@
 <script type="text/javascript" src="../../../assets/js/jquery.countTo.js"></script>
 <script type="text/javascript" src="../../../assets/js/lightbox.min.js"></script>
 <script type="text/javascript" src="../../../assets/js/main.js"></script>
+
 </body>
 </html>
