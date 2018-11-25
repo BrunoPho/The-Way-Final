@@ -22,7 +22,7 @@ if ($row == 1) {
 
     $_SESSION['email'] = $usuario;
 
-    header('Location: ../views/Caminhoneiro/perfilCaminhoneiro.html');
+    header('Location: ../views/Caminhoneiro/perfilCaminhoneiro.php');
 
     exit();
 
