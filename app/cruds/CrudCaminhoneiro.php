@@ -23,22 +23,24 @@ class CrudCaminhoneiro{
 
 
     //Cadastra o usuário Caminhoneiro
-    public function salvar (Caminhoneiro $caminhoneiro){
+    public function salvar (Caminhoneiro $caminhoneiro)
+    {
 
-        try {
+        /*try {*/
 
-            $sql = "INSERT INTO caminhoneiro (nome, email, telefone, senha, rg, cpf, num_antt, num_cnh, categoria_cnh, cod_cidade)
-                VALUES ($caminhoneiro->nome, $caminhoneiro->email, $caminhoneiro->telefone, $caminhoneiro->senha, $caminhoneiro->rg, $caminhoneiro->cpf, $caminhoneiro->num_antt, $caminhoneiro->num_cnh, $caminhoneiro->categoria_cnh, $caminhoneiro->cod_cidade)";
+        $sql = "INSERT INTO caminhoneiro (nome, email, telefone, senha, rg, cpf, num_antt, num_cnh, categoria_cnh, cod_cidade)
+                VALUES ('$caminhoneiro->nome', '$caminhoneiro->email', '$caminhoneiro->telefone', '$caminhoneiro->senha', '$caminhoneiro->rg', '$caminhoneiro->cpf', '$caminhoneiro->num_antt', '$caminhoneiro->num_cnh', '$caminhoneiro->categoria_cnh', '$caminhoneiro->cod_cidade')";
 
-            $this->conexao->exec($sql);
+        $this->conexao->exec($sql);
 
-        } catch (Exception $e){
+        /*  } catch (Exception $e){
 
-            echo "Ocorreu um erro, volte a página incial e reporte, no formulario no final da página!";
-            // header('Location: ../../index.html');
+              echo "Ocorreu um erro, volte a página incial e reporte, no formulario no final da página!";
+              // header('Location: ../../index.html');
 
-        }
+          }*/
 
+        /*}}*/
     }
 
     //Busca o usuário Caminhoneiro
@@ -52,7 +54,7 @@ class CrudCaminhoneiro{
 //Daqui pra baixo eu mexi
 
     //Edita as informações do usuário Caminhoneiro
-    public function editar ($cod_c, $nome, $email, $telefone, $senha, $rg, $cpf, $num_cnh, $cod_cidade){
+    public function editar ($cod_caminhoneiro, $nome, $email, $telefone, $senha, $rg, $cpf, $num_cnh, $cod_cidade){
 
         $sql = "UPDATE caminhoneiro SET nome = '$nome', email = '$email', telefone = '$telefone', senha = '$senha', rg = '$rg', cpf = '$cpf',  num_cnh = '$num_cnh', cod_cidade = $cod_cidade WHERE cod_caminhoneiro = $cod_caminhoneiro";
         $this->conexao->exec($sql);
