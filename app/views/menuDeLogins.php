@@ -40,13 +40,13 @@
     <br><h2> Você é uma: </h2>
 
     <div class="">
-        <p><a href="Transportadora/transportadora_cadastro.php" class="btn btn-primary btn-lg active" role="button"> Transportadora </a></p>
+        <p><a href="../views/Login/loginT.php" class="btn btn-primary btn-lg active" role="button"> Transportadora </a></p>
     </div>
 
     <h2> ou um </h2>
 
     <div class="">
-        <p><a href="Caminhoneiro/caminhoneiro_cadastro.php" class="btn btn-primary btn-lg active" role="button"> Caminhoneiro </a></p>
+        <p><a href="../views/Login/loginC.php" class="btn btn-primary btn-lg active" role="button"> Caminhoneiro </a></p>
     </div>
 </div>
 
