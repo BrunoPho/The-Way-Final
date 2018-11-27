@@ -42,8 +42,8 @@
                 <td><?= $transportadora['razao_social']      ?> </td>
                 <td><?= $transportadora['cnpj']              ?> </td>
                 <td><?= $transportadora['cidade_cod_cidade'] ?> </td>
-                <td><a class="btn btn-info"    href="http://localhost/TheWay2-master/app/controllers/transportadora.php?acao=editar&id_transportadora= <?= $transportadora['cod_transportadora'] ?>"> Editar  </a></td>
-                <td><a class="btn btn-danger"  href="http://localhost/TheWay2-master/app/controllers/transportadora.php?acao=excluir&id_transportadora=<?= $transportadora['cod_transportadora'] ?>"> Excluir </a></td>
+                <td><a class="btn btn-info"    href="http://localhost/The-Way-Final-master/app/controllers/transportadora.php?acao=editar&id_transportadora= <?= $transportadora['cod_transportadora'] ?>"> Editar  </a></td>
+                <td><a class="btn btn-danger"  href="http://localhost/The-Way-Final-master/app/controllers/transportadora.php?acao=excluir&id_transportadora=<?= $transportadora['cod_transportadora'] ?>"> Excluir </a></td>
             </tr>
 
         <?php endforeach; ?>
