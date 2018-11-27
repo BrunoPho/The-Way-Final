@@ -5,6 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +14,7 @@ session_start();
     <meta name="author" content="Bruno Pinheiro">
     <meta name="description" content="">
 
-
-    <title> The way - A página que guia você </title>
+      <title> The way - A página que guia você </title>
 
     <!-- Importação do CSS -->
     <link href="../../../assets/css/signin.css" rel="stylesheet">
@@ -38,31 +38,31 @@ session_start();
 
 <div class="container-fluid">
 
-          <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-4 is-offset-4">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
 
-                    <?php if(isset($_SESSION['nao_autenticado'])): ?>
+                <?php if(isset($_SESSION['nao_autenticado'])): ?>
 
-                        <div class="notification is-danger">
+                    <div class="notification is-danger">
 
-                            <p> ERRO: Usuário ou senha inválidos. </p>
+                        <p> ERRO: Usuário ou senha inválidos. </p>
 
-                        </div>
+                    </div>
 
-                    <?php
-                    endif;
-                    unset($_SESSION['nao_autenticado']);
-                    ?>
+                <?php
+                endif;
+                unset($_SESSION['nao_autenticado']);
+                ?>
 
-                </div>
             </div>
         </div>
+    </div>
 
     <!-- Form inicio -->
     <form class="form-signin" action="../../controllers/login.php" method="POST">
 
-        <h2 class="form-signin-heading">         Entre em sua conta Transportadora </h2>
+        <h2 class="form-signin-heading">         Entre em sua conta Caminhoneiro </h2>
         <label for="inputEmail" class="sr-only"> Endereço de e-mail </label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus>
         <label for="inputPassword" class="sr-only"> Senha </label>
