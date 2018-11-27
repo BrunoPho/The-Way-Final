@@ -25,19 +25,19 @@ class Crudservico{
     //Cadastra o usuário servico
     public function salvar (servico $servico){
 
-        try {
+        //try {
 
             $sql = "INSERT INTO servico (numero_seguro, data_entrega, cod_servico, data_cadastro, quantidade, data_retirada, data_retirada_prev, data_entrega_prev, cod_status, cod_cidade, cod_produto)
                 VALUES ( '$servico->numero_seguro','$servico->data_entrega','$servico->cod_servico','$servico->data_cadastro','$servico->quantidade','$servico->data_retirada','$servico->data_retirada_prev','$servico->data_entrega_prev','$servico->cod_status','$servico->cod_cidade','$servico->cod_produto')";
 
             $this->conexao->exec($sql);
 
-        } catch (Exception $e){
+        //} catch (Exception $e){
 
-            echo "Ocorreu um erro, volte a página incial e reporte, no formulario no final da página!";
+          //  echo "Ocorreu um erro, volte a página incial e reporte, no formulario no final da página!";
             // header('Location: ../../index.html');
 
-        }
+        //}
     }
 
     //Busca o usuário servico
