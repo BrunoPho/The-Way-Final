@@ -8,16 +8,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-    <title> Cadestre-se caminhoneiro </title>
+    <title> Cadestre-se carreta </title>
 </head>
 <body>
 
 <div class="container">
 
-    <h1> Cadastro caminhoneiros </h1>
+    <h1> Cadastro carretas </h1>
 
     <!-- Form - Inicio do formulario -->
-    <form class="form-horizontal" method="POST" action="../../controllers/caminhoneiro.php?acao=cadastrar">
+    <form class="form-horizontal" method="POST" action="../../controllers/carreta.php?acao=cadastrar">
 
         <fieldset><!-- conjunto de campos -->
 

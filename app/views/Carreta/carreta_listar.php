@@ -19,7 +19,7 @@
 
     <table class="table">
         <thead>
-        <tr>
+         <tr>
             <th scope="col"> cod_carreta    </th>
             <th scope="col"> ano_fabricacao </th>
             <th scope="col"> ano_modelo     </th>

@@ -15,55 +15,54 @@
 
     <div class="container">
 
-        <p><h1> Lista serviços </h1></p>
+        <p><h1> Lista de serviços </h1></p>
 
         <table class="table">
             <thead>
             <tr>
-                <th scope="col"> Código        </th>
-                <th scope="col"> nome          </th>
-                <th scope="col"> email         </th>
-                <th scope="col"> telefone      </th>
-                <th scope="col"> senha         </th>
-                <th scope="col"> razao_social  </th>
-                <th scope="col"> cnpj          </th>
-                <th scope="col"> num_antt      </th>
-                <th scope="col"> num_cnh       </th>
-                <th scope="col"> categoria_cnh </th>
-                <th scope="col"> cidade        </th>
-                <th scope="col">     #         </th>
-                <th scope="col">     #         </th>
+                <th scope="col"> numero_seguro      </th>
+                <th scope="col"> data_entrega       </th>
+                <th scope="col"> cod_servico        </th>
+                <th scope="col"> data_cadastro      </th>
+                <th scope="col"> quantidade         </th>
+                <th scope="col"> data_retirada      </th>
+                <th scope="col"> data_retirada_prev </th>
+                <th scope="col"> data_entrega_prev  </th>
+                <th scope="col"> cod_status         </th>
+                <th scope="col"> cod_cidade         </th>
+                <th scope="col"> cod_produto        </th>
+                <th scope="col">     #              </th>
+                <th scope="col">     #              </th>
             </tr>
             </thead>
             <tbody>
 
             <?php foreach ($listaservicos as $servico): ?>
 
-            <tr>
-                <th scope="row"><?= $servico['cod_servico'] ?></th>
-                <td><?= $servico['nome'] ?></td>
-                <td><?= $servico['email'] ?></td>
-                <td><?= $servico['telefone'] ?></td>
-                <td><?= $servico['senha'] ?></td>
-                <td><?= $servico['rg'] ?></td>
-                <td><?= $servico['cpf'] ?></td>
-                <td><?= $servico['num_antt'] ?></td>
-                <td><?= $servico['num_cnh'] ?></td>
-                <td><?= $servico['categoria_cnh'] ?></td>
-                <td><?= $servico['cod_cidade'] ?></td>
+            <tr>    
+
+                <th scope="row"><?= $servico['numero_seguro'] ?></th>
+                <td><?= $servico['data_entrega'] ?>  </td>
+                <td><?= $servico['cod_servico'] ?>   </td>
+                <td><?= $servico['data_cadastro'] ?> </td>
+                <td><?= $servico['quantidade'] ?>    </td>
+                <td><?= $servico['data_retirada'] ?> </td>
+                <td><?= $servico['data_retirada_prev'] ?> </td>
+                <td><?= $servico['data_entrega_prev'] ?>  </td>
+                <td><?= $servico['cod_status'] ?>  </td>
+                <td><?= $servico['cod_cidade'] ?>  </td>
+                <td><?= $servico['cod_produto'] ?> </td>
                 <td><a class="btn btn-info"   href="http://localhost/The-Way-Final-master/app/controllers/servico.php?acao=editar&id_servico= <?= $servico['cod_servico'] ?>"> Editar  </a></td>
                 <td><a class="btn btn-danger" href="http://localhost/The-Way-Final-master/app/controllers/servico.php?acao=excluir&id_servico=<?= $servico['cod_servico'] ?>"> Excluir </a></td>
             </tr>
+
+            <button class="btn btn-info" href="../Transportadora/perfilTransportadora.html" > Voltar </button>
 
             <?php endforeach; ?>
 
             </tbody>
         </table>
-
-
     </div>
-
-
 
 </body>
 </html>

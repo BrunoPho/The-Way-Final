@@ -21,14 +21,6 @@
 
         <fieldset><!-- conjunto de campos -->
 
-            <!-- Text input (cod_caminhao)-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="cod_caminhao"></label>
-                <div class="col-md-4">
-                    <input id="cod_caminhao" name="cod_caminhao" type="number" placeholder="Código do caminhao" class="form-control input-md" required="" title="">
-                </div>
-            </div>
-
             <!-- Text input (ano_modelo)-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="ano_modelo"></label>

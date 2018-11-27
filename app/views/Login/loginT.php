@@ -5,6 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +13,6 @@ session_start();
     Qualquer outro conteúdo principal deve vir * após * estas tags -->
     <meta name="author" content="Bruno Pinheiro">
     <meta name="description" content="">
-
 
     <title> The way - A página que guia você </title>
 
@@ -72,9 +72,11 @@ session_start();
             <label>
                 <input type="checkbox" value="remember-me"> lembre-se de mim </label>
         </div>
+        
         <button class="btn btn-lg btn-primary btn-block" type="submit"> Logar </button>
-    </form>
-    <!-- /Form --></div>
+    
+    </form><!-- /Form -->
+</div>
 
 <!-- Botão para Home -->
 <div style="text-align: center;">

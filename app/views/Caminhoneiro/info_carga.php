@@ -76,7 +76,7 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li class="scroll"><a href="../Y-Importar/ajuda.html"> Ajuda </a></li>
-                    <li class="scroll"><a href="../../../index.html"> Sair </a></li>
+                    <li class="scroll"><a href="../../../index.html">      Sair </a></li>
 
                 </ul>
             </div>

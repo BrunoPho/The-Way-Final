@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -54,17 +54,14 @@
                 <label class="col-md-4 control-label" for="senha"></label>
                 <div class="col-md-4">
                     <input value="<?= $transportadora['senha'] ?>" id="senha" name="senha" type="password" placeholder="Senha" class="form-control input-md" required="">
-
                 </div>
             </div>
-
 
             <!-- Text input (razao_social)-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="razao_social"></label>
                 <div class="col-md-4">
                     <input value="<?= $transportadora['razao_social'] ?>" id="razao_social" name="razao_social" type="number" placeholder="Numero de razao social" class="form-control input-md" required="">
-
                 </div>
             </div>
 
@@ -80,7 +77,6 @@
                     <label class="col-md-4 control-label" for="cidade"></label>
                     <div class="col-md-4">
                         <input value="<?= $transportadora['cod_cidade'] ?>" id="cidade" name="cidade" type="text" placeholder="Cidade" class="form-control input-md" required="">
-
                     </div>
                 </div>
 
@@ -89,7 +85,6 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" type="botton1"></label>
                     <div class="col-md-8">
-                        <!--<a href="cadastroC2.html" class="btn btn-success" role="button"> Prosseguir </a>-->
                         <a href="../../../index.html" class="btn btn-danger" role="button"> Cancelar </a>
                         <button class="btn btn-info" type="submit"> Atualizar </button>
                     </div>

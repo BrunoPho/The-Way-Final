@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="numero_seguro"></label>
                 <div class="col-md-4">
-                    <input id="numero_seguro" name="numero_seguro" type="number" placeholder="Numero de seguro" class="form-control input-md" value="" required="" title="Preencha com seu numero de seguro">
+                    <input id="numero_seguro" name="numero_seguro" type="number" placeholder="Numero de seguro" class="form-control input-md" value="<?= $caminhoneiro['numero_seguro'] ?>" required="" title="Preencha com seu numero de seguro">
                 </div>
             </div>
 
@@ -37,7 +37,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="data_entrega"></label>
                 <div class="col-md-4">
-                    <input id="data_entrega" name="data_entrega" type="date" placeholder="data_entrega" class="form-control input-md" value="" required="" title="Preencha com a data de entraga do serviço">
+                    <input id="data_entrega" name="data_entrega" type="date" placeholder="data_entrega" class="form-control input-md" value="<?= $caminhoneiro['data_entrega'] ?>" required="" title="Preencha com a data de entraga do serviço">
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="cod_servico"></label>
                 <div class="col-md-4">
-                    <input id="cod_servico" name="cod_servico" type="number" pattern="" placeholder="Código de serviço" class="form-control input-md" value="" required="" title="Código de serviço">
+                    <input id="cod_servico" name="cod_servico" type="number" pattern="" placeholder="Código de serviço" class="form-control input-md" value="<?= $caminhoneiro['cod_servico'] ?>" required="" title="Código de serviço">
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="data_cadastro"></label>
                 <div class="col-md-4">
-                    <input id="data_cadastro" name="data_cadastro" type="date" placeholder="Data de cadastro do serviço" class="form-control input-md" value="" required="">
+                    <input id="data_cadastro" name="data_cadastro" type="date" placeholder="Data de cadastro do serviço" class="form-control input-md" value="<?= $caminhoneiro['data_cadastro'] ?>" required="">
 
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="quantidade"></label>
                 <div class="col-md-4">
-                    <input id="quantidade" name="quantidade" type="number" placeholder="Quantidade de caminhoneiros" class="form-control input-md" value="" required="">
+                    <input id="quantidade" name="quantidade" type="number" placeholder="Quantidade de caminhoneiros" class="form-control input-md" value="<?= $caminhoneiro['quantidade'] ?>" required="">
 
                 </div>
             </div>
@@ -72,14 +72,14 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="data_retirada"></label>
                 <div class="col-md-4">
-                    <input id="data_retirada" name="data_retirada" type="date" placeholder="Data de finalição do serviço" class="form-control input-md" value="" required="">
+                    <input id="data_retirada" name="data_retirada" type="date" placeholder="Data de finalição do serviço" class="form-control input-md" value="<?= $caminhoneiro['data_retirada'] ?>" required="">
                 </div>
 
                 <!-- Text input (data_retirada_prev)-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="data_retirada_prev"></label>
                     <div class="col-md-4">
-                        <input id="data_retirada_prev" name="data_retirada_prev" type="date" placeholder="Data da finalição prevista do serviço" class="form-control input-md" value="" required="">
+                        <input id="data_retirada_prev" name="data_retirada_prev" type="date" placeholder="Data da finalição prevista do serviço" class="form-control input-md" value="<?= $caminhoneiro['data_retirada_prev'] ?>" required="">
 
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="data_entrega_prev"></label>
                     <div class="col-md-4">
-                        <input id="data_entrega_prev" name="data_entrega_prev" type="date" placeholder="Data da entraga prevista do serviço" class="form-control input-md" value="" required="">
+                        <input id="data_entrega_prev" name="data_entrega_prev" type="date" placeholder="Data da entraga prevista do serviço" class="form-control input-md" value="<?= $caminhoneiro['data_entrega_prev'] ?>" required="">
 
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="cod_status"></label>
                     <div class="col-md-4">
-                        <input id="cod_status" name="cod_status" type="number" placeholder="Código do estatus do serviço" class="form-control input-md" value="" required="">
+                        <input id="cod_status" name="cod_status" type="number" placeholder="Código do estatus do serviço" class="form-control input-md" value="<?= $caminhoneiro['cod_status'] ?>" required="">
 
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="cod_cidade"></label>
                     <div class="col-md-4">
-                        <input id="cod_cidade" name="cod_cidade" type="text" placeholder="Cidade e região do serviço" class="form-control input-md" value="" required="">
+                        <input id="cod_cidade" name="cod_cidade" type="text" placeholder="Cidade e região do serviço" class="form-control input-md" value="<?= $caminhoneiro['cod_cidade'] ?>" required="">
 
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="cod_produto"></label>
                     <div class="col-md-4">
-                        <input id="cod_produto" name="cod_produto" type="number" placeholder="Código do produto" class="form-control input-md" value="" required="">
+                        <input id="cod_produto" name="cod_produto" type="number" placeholder="Código do produto" class="form-control input-md" value="<?= $caminhoneiro['cod_produto'] ?>" required="">
 
                     </div>
                 </div>
@@ -136,16 +136,3 @@
 
 </body>
 </html>
-<!--
-
-<?/*= $caminhoneiro['numero_seguro'] */?>
-<?/*= $caminhoneiro['data_entrega'] */?>
-<?/*= $caminhoneiro['cod_servico'] */?>
-<?/*= $caminhoneiro['data_cadastro'] */?>
-<?/*= $caminhoneiro['quantidade'] */?>
-<?/*= $caminhoneiro['data_retirada'] */?>
-<?/*= $caminhoneiro['data_retirada_prev'] */?>
-<?/*= $caminhoneiro['data_entrega_prev'] */?>
-<?/*= $caminhoneiro['cod_status'] */?>
-<?/*= $caminhoneiro['cod_cidade'] */?>
---><?/*= $caminhoneiro['cod_produto'] */?>
