@@ -30,15 +30,15 @@
         </thead>
         <tbody>
 
-        <?php foreach ($listaCaminhoneiros as $caminhoneiro): ?>
+        <?php foreach ($listacarretas as $carreta): ?>
 
             <tr>
-                <th scope="row"><?= $caminhoneiro['cod_carreta'] ?></th>
-                <td><?= $caminhoneiro['ano_fabricacao'] ?></td>
-                <td><?= $caminhoneiro['ano_modelo'] ?></td>
-                <td><?= $caminhoneiro['cod_produto'] ?></td>
-                <td><a class="btn btn-info"   href="http://localhost/TheWay2-master/app/controllers/caminhoneiro.php?acao=editar&id_caminhoneiro= <?= $caminhoneiro['cod_caminhoneiro'] ?>"> Editar  </a></td>
-                <td><a class="btn btn-danger" href="http://localhost/TheWay2-master/app/controllers/caminhoneiro.php?acao=excluir&id_caminhoneiro=<?= $caminhoneiro['cod_caminhoneiro'] ?>"> Excluir </a></td>
+                <th scope="row"><?= $carreta['cod_carreta'] ?></th>
+                <td><?= $carreta['ano_fabricacao'] ?></td>
+                <td><?= $carreta['ano_modelo'] ?></td>
+                <td><?= $carreta['cod_produto'] ?></td>
+                <td><a class="btn btn-info"   href="http://localhost/The-Way-Final-master/app/controllers/carreta.php?acao=editar&id_carreta= <?= $carreta['cod_carreta'] ?>"> Editar  </a></td>
+                <td><a class="btn btn-danger" href="http://localhost/The-Way-Final-master/app/controllers/carreta.php?acao=excluir&id_carreta=<?= $carreta['cod_carreta'] ?>"> Excluir </a></td>
             </tr>
 
         <?php endforeach; ?>
