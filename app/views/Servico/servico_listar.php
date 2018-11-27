@@ -51,8 +51,8 @@
                 <td><?= $servico['num_cnh'] ?></td>
                 <td><?= $servico['categoria_cnh'] ?></td>
                 <td><?= $servico['cod_cidade'] ?></td>
-                <td><a class="btn btn-info"   href="http://localhost/TheWay2-master/app/controllers/servico.php?acao=editar&id_servico= <?= $servico['cod_servico'] ?>"> Editar  </a></td>
-                <td><a class="btn btn-danger" href="http://localhost/TheWay2-master/app/controllers/servico.php?acao=excluir&id_servico=<?= $servico['cod_servico'] ?>"> Excluir </a></td>
+                <td><a class="btn btn-info"   href="http://localhost/The-Way-Final-master/app/controllers/servico.php?acao=editar&id_servico= <?= $servico['cod_servico'] ?>"> Editar  </a></td>
+                <td><a class="btn btn-danger" href="http://localhost/The-Way-Final-master/app/controllers/servico.php?acao=excluir&id_servico=<?= $servico['cod_servico'] ?>"> Excluir </a></td>
             </tr>
 
             <?php endforeach; ?>
