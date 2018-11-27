@@ -37,7 +37,7 @@ function cadastrar(){
     $transportadora->senha             = filter_input(INPUT_POST, 'senha',             FILTER_SANITIZE_STRING);
     $transportadora->razao_social      = filter_input(INPUT_POST, 'razo_social',       FILTER_SANITIZE_STRING);
     $transportadora->cnpj              = filter_input(INPUT_POST, 'cnpj',              FILTER_SANITIZE_STRING);
-    $transportadora->cod_cidade        = filter_input(INPUT_POST, 'cidade_cod_cidade', FILTER_SANITIZE_STRING);
+    $transportadora->cod_cidade        = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
 
     $crud_transportadora = new CrudTransportadora();
     $crud_transportadora->salvar($transportadora);

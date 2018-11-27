@@ -63,9 +63,9 @@ function editar(){
  //Vai salvar e substituir o que foi o formulario (Atualizar)
 function salvar_editar(){
 
-    $caminhoneiro = new Crudcaminhoneiro();
+    $caminhoneiro = new CrudCaminhoneiro();
     $caminhoneiro->editar($_POST['id_caminhoneiro'], $_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['rg'], $_POST['cpf'], $_POST['num_cnh'], $_POST['cod_cidade']);
-
+    
 }
 
 if (isset($_GET['acao']) and function_exists($_GET['acao'])) {

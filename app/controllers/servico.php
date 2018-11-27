@@ -66,8 +66,7 @@ function editar(){
 function salvar_editar(){
 
     $servico = new Crudservico();
-    $servico->editar($_POST['numero_seguro'], $_POST['data_entrega'], $_POST['cod_servico'], $_POST['data_cadastro'], $_POST['quantidade'], $_POST['data_retirada'], $_POST['data_retirada_prev'], $_POST['data_entrega_prev'], $_POST['cod_status'], $_POST['cod_cidade'], $_POST['cod_produto']); // Discutir oq sera editado
-//   numero_seguro, data_entrega, cod_servico, data_cadastro, quantidade, data_retirada, data_retirada_prev, data_entrega_prev, cod_status, cod_cidade, cod_produto
+    $servico->editar($_POST['numero_seguro'], $_POST['data_entrega'], $_POST['cod_servico'], $_POST['data_cadastro'], $_POST['quantidade'], $_POST['data_retirada'], $_POST['data_retirada_prev'], $_POST['data_entrega_prev'], $_POST['cod_status'], $_POST['cod_cidade'], $_POST['cod_produto']); 
 }
 
 if (isset($_GET['acao']) and function_exists($_GET['acao'])) {
@@ -76,7 +75,6 @@ if (isset($_GET['acao']) and function_exists($_GET['acao'])) {
 } else {
 
     index();
-    //header('Location: ../../index.php');
 
 }
 
