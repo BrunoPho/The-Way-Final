@@ -38,7 +38,9 @@
                 <td><?= $caminhao['capacidade'] ?></td>
                 <td><?= $caminhao['cod_modelo'] ?></td>
                 <td><?= $caminhao['cod_tipo'] ?></td>
-                <td><?= $caminhao['cod_caminhoneiro'] ?></td>
+                <td><?= $caminhao['cod_caminhao'] ?></td>
+                <td><a class="btn btn-info"   href="http://localhost/The-Way-Final-master/app/controllers/caminhao.php?acao=editar&id_caminhao= <?= $caminhao['cod_caminhao'] ?>"> Editar  </a></td>
+                <td><a class="btn btn-danger" href="http://localhost/The-Way-Final-master/app/controllers/caminhao.php?acao=excluir&id_caminhao=<?= $caminhao['cod_caminhao'] ?>"> Excluir </a></td>
             </tr>
 
         <?php endforeach; ?>
