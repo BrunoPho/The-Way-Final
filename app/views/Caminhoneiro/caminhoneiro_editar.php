@@ -114,7 +114,7 @@
                     <label class="col-md-4 control-label" type="botton1"></label>
                     <div class="col-md-8">
                         <!--<a href="cadastroC2.html" class="btn btn-success" role="button"> Prosseguir </a>-->
-                        <a href="../../../index.html" class="btn btn-danger" role="button"> Cancelar </a>
+                        <a href="../../../app/controllers/transportadora.php?acao=listar" class="btn btn-danger" role="button"> Cancelar </a>
                         <button class="btn btn-info" type="submit"> Atualizar </button>
                     </div>
                   </div>
