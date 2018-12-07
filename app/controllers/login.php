@@ -1,37 +1,40 @@
 <?php
-     session_start();
-     
-    include('../conexao/Conexao.php');
+session_start();
 
-       if (empty($_POST['email']) || empty($_POST['senha'])) {
+include('../conexao/Conexao.php');
 
-         header('Location: ../views/Login/loginC.php');
+if (!isset($_POST['email']) || !isset($_POST['senha'])) {
 
-        exit();
-        }
+    header('Location: ../views/Login/loginT.php');
 
-$email = mysqli_real_escape_string($conexao, $_POST['email']);
-$senha = mysqli_real_escape_string($conexao, $_POST['senha']);
+}
 
-$query = "select email, senha from caminhoneiro where email = '{$email}' and senha = md5('{$senha}')";
+$conexao = Conexao::getConexao();;
 
-$result = mysqli_query($conexao, $query);
+$email = $_POST['email'];
+$senha = $_POST['senha'];
 
-$row = mysqli_num_rows($result);
+$sql = "select email, senha from caminhoneiro where email = '{$email}' and senha = '{$senha}';";
 
-if ($row == 1) {
+$query = $conexao->query($sql)->fetchAll();
 
-    $_SESSION['email'] = $usuario;
+var_dump($query);
+
+$_SESSION['email'] = $usuario;
+
+//header('Location: ../views/caminhoneiro/perfilcaminhoneiro.php');
+
+if (count($query) > 0) {
 
     header('Location: ../views/Caminhoneiro/perfilCaminhoneiro.php');
 
-    exit();
-
-  } else {
+} else {
 
     $_SESSION['nao_autenticado'] = true;
 
-    header('Location: ../views/loginC.php');
+    echo "Senha ou usuario invalido";
+
+    //header('Location: ../views/Login/loginT.php');
 
     exit();
 }

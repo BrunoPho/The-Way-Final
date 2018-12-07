@@ -3,35 +3,47 @@
      
      include('../conexao/Conexao.php');
 
-        if (empty($_POST['email']) || empty($_POST['senha'])) {
+     if (!isset($_POST['email']) || !isset($_POST['senha'])) {
 
-           header('Location: ../views/Login/loginT.php');
+        header('Location: ../views/Login/loginT.php');
 
-     exit();
      }
 
-$email = mysqli_real_escape_string($conexao, $_POST['email']);
-$senha = mysqli_real_escape_string($conexao, $_POST['senha']);
+     $conexao = Conexao::getConexao();;
 
-$query = "select email, senha from transportadora where email = '{$email}' and senha = md5('{$senha}')";
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-$result = mysqli_query($conexao, $query);
+    $sql = "select email, senha from transportadora where email = '{$email}' and senha = '{$senha}';";
 
-$row = mysqli_num_rows($result);
+    $query = $conexao->query($sql)->fetchAll();
 
-if ($row == 1) {
+    var_dump($query);
 
     $_SESSION['email'] = $usuario;
 
-    header('Location: ../views/Transportadora/perfilTransportadora.php');
+    //header('Location: ../views/Transportadora/perfilTransportadora.php');
 
-    exit();
+  if (count($query) > 0) {
+
+      $_SESSION['cod_transportadora'] = $query ['cod_transportadora'];
+      $_SESSION['nome']               = $query ['nome'];
+      $_SESSION['email']              = $query ['email'];
+      $_SESSION['telefone']           = $query ['telefone'];
+      $_SESSION['senha']              = $query ['senha'];
+      $_SESSION['razao_social']       = $query ['razao_social'];
+      $_SESSION['cnpj']               = $query ['cnpj'];
+      $_SESSION['cidade_cod_cidade']  = $query ['cidade_cod_cidade'];
+
+   header('Location: ../views/Transportadora/perfilTransportadora.php');
 
   } else {
 
     $_SESSION['nao_autenticado'] = true;
 
-    header('Location: ../views/Login/loginT.php');
+    echo "Senha ou usuario invalido";
+
+    //header('Location: ../views/Login/loginT.php');
 
     exit();
 }

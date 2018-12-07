@@ -62,8 +62,8 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
 
-          <li class="scroll"><a href="../Y-Importar/ajuda.html"> Ajuda        </a></li>
-          <li class="scroll"><a href="../../../index.html">      Sair         </a></li>
+          <li class="scroll"><a href="../Y-Importar/ajuda.html"> Ajuda </a></li>
+          <li class="scroll"><a href="../../../index.html">      Sair  </a></li>
 
         </ul>
       </div>
@@ -112,23 +112,35 @@
 
             <hr>
 
-        <tbody>
-            <tr>
-                <th><?= $transportadora['cod_transportadora'] ?></th>
-                <td><?= $transportadora['nome']               ?> </td>
-                <td><?= $transportadora['email']              ?> </td>
-                <td><?= $transportadora['telefone']           ?> </td>
-                <td><?= $transportadora['senha']              ?> </td>
-                <td><?= $transportadora['razao_social']       ?> </td>
-                <td><?= $transportadora['cnpj']               ?> </td>
-                <td><?= $transportadora['cidade_cod_cidade']  ?> </td>
-            </tr>
-        </tbody>
+              <div class="container">
+
+                  <tbody>
+
+                   <?php foreach ($listatransportadoras as $transportadora): ?>
+
+                          <tr>
+                              <th scope="row"><?= $transportadora['cod_transportadora'] ?></th>
+                              <td><?= $transportadora['nome']              ?> </td>
+                              <td><?= $transportadora['email']             ?> </td>
+                              <td><?= $transportadora['telefone']          ?> </td>
+                              <td><?= $transportadora['senha']             ?> </td>
+                              <td><?= $transportadora['razao_social']      ?> </td>
+                              <td><?= $transportadora['cnpj']              ?> </td>
+                              <td><?= $transportadora['cidade_cod_cidade'] ?> </td>
+                          </tr>
+
+                      <?php endforeach; ?>
+
+                     </tbody>
+                  </table>
+              </div>
 
         <hr>
 
           </form>
-        </div><!--/tab-pane-->
+
+
+        </div><!--Cadastro do servico-->
 
         <div class="tab-pane" id="messages">
 

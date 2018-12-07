@@ -74,7 +74,6 @@ if (isset($_GET['acao']) and function_exists($_GET['acao'])) {
 } else {
 
     index();
-    //header('Location: ../../index.php');
 
 }
 

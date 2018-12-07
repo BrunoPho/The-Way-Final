@@ -14,7 +14,7 @@ function index(){
     listar_transportadora();
 }
 
-function listar_transportadora(){    //todo trocando listar por perfil
+/*function listar_transportadora(){    //todo trocando listar por perfil
   //  var_dump($_POST);
   //  exit();
     $transportadoras = new Crudtransportadora();
@@ -22,13 +22,14 @@ function listar_transportadora(){    //todo trocando listar por perfil
 
     include __DIR__ . "/../views/Transportadora/transportadora_listar.php";
 
-}
+}*/
+
 function listar_transportadoras(){    //todo trocar listar por perfil
     //_transportadora
     $transportadoras = new Crudtransportadora();
     $listatransportadoras = $transportadoras->gettransportadoras();
 
-    include __DIR__ . "/../views/Transportadora/transportadora_listar.php";
+    include __DIR__ . "/../views/Transportadora/perfilTransportadora.php";
 
 }
 function cadastro(){
@@ -49,10 +50,13 @@ function cadastrar(){
 
     $crud_transportadora = new CrudTransportadora();
     $crud_transportadora->salvar($transportadora);
-    var_dump($_SESSION);
-    //exit();
+
+    /*var_dump($_SESSION);
+    exit();*/
+
     //listar_transportadora();
-    //session_start();
+
+    /*session_start();
     $login =  $_POST['email'];
     $senha =  $_POST['senha'];
     $listaTransportadora = $crud_transportadora->gettransportadoras();
@@ -66,13 +70,15 @@ function cadastrar(){
             $_SESSION['transportadora_existe'] = true;
         }
     }
+
     // var_dump($_SESSION);
     if ($_SESSION['transportadora_existe'] == true) {
         echo 'oi';
         //exit();
         include '../views/Y-Importar/cabecalho_padrao.php';
         include '../views/Transportadora/perfilTransportadora.php';
-    }
+        //include '../views/Transportadora/transportadora_listar.php';
+    }*/
 
 }
 

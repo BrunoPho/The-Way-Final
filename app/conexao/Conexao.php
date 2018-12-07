@@ -9,6 +9,11 @@ class Conexao {
 
     public static $conexao = null;
 
+    public function __construct()
+    {
+        $this->getConexao();
+    }
+
     public static function getConexao(){
 
         try{

@@ -108,11 +108,43 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
+
+                  <form class="form" action="#" method="POST" id="hometrasportadora">
+
+                      <h1> Meus dados </h1>
+
+                      <hr>
+
+                      <div class="container">
+
+                          <tbody>
+
+                          <?php foreach ($listatransportadoras as $transportadora): ?>
+
+                              <tr>
+                                  <th scope="row"><?= $transportadora['cod_transportadora'] ?></th>
+                                  <td><?= $transportadora['nome']              ?> </td>
+                                  <td><?= $transportadora['email']             ?> </td>
+                                  <td><?= $transportadora['telefone']          ?> </td>
+                                  <td><?= $transportadora['senha']             ?> </td>
+                                  <td><?= $transportadora['razao_social']      ?> </td>
+                                  <td><?= $transportadora['cnpj']              ?> </td>
+                                  <td><?= $transportadora['cidade_cod_cidade'] ?> </td>
+                              </tr>
+
+                          <?php endforeach; ?>
+
+                          </tbody>
+                          </table>
+                      </div>
+
+                      <hr>
+
                 <a class="navbar-brand"> Meus Dados: </a>
               </div>
             </div><!-- /.container-fluid -->
           </nav>
-          
+
           <nav aria-label="breadcrumb" role="navigation">
 			  <ol class="breadcrumb">
 			    <li class="breadcrumb-item active" aria-current="page"> Nome completo: Bino Farias </li>
@@ -123,7 +155,7 @@
 			  <ol class="breadcrumb">
 			    <!-- <li class="breadcrumb-item"> Gmail: </li> -->
 			    <li class="breadcrumb-item active" aria-current="page"> Email: binofarias@gmail.com </li>
-			  </ol> 
+			  </ol>
 			</nav>
 
 			<nav aria-label="breadcrumb" role="navigation">

@@ -63,9 +63,9 @@ session_start();
 
         <h2 class="form-signin-heading">         Entre em sua conta Transportadora </h2>
         <label for="inputEmail" class="sr-only"> Endereço de e-mail </label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus>
+        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus>
         <label for="inputPassword" class="sr-only"> Senha </label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
+        <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
 
         <div class="checkbox">
             <label>
