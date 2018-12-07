@@ -230,9 +230,8 @@
 
                     </div>
                 </div>
-              </hr>
 
-            <div class="form-group">
+              <div class="form-group">
               <div class="col-xs-12">
                 <br>
                 <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Cadastrar </button>
