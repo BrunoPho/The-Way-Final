@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 26-Nov-2018 às 17:33
--- Versão do servidor: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Host: localhost
+-- Tempo de geração: 06/12/2018 às 11:00
+-- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
+-- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bd_jeff_logico`
+-- Banco de dados: `bd_jeff_logico`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `caminhao`
+-- Estrutura para tabela `caminhao`
 --
 
 CREATE TABLE `caminhao` (
@@ -39,7 +37,7 @@ CREATE TABLE `caminhao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `caminhao`
+-- Fazendo dump de dados para tabela `caminhao`
 --
 
 INSERT INTO `caminhao` (`cod_caminhao`, `ano_modelo`, `ano_fabricacao`, `capacidade`, `cod_modelo`, `cod_tipo`, `cod_caminhoneiro`) VALUES
@@ -48,7 +46,7 @@ INSERT INTO `caminhao` (`cod_caminhao`, `ano_modelo`, `ano_fabricacao`, `capacid
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `caminhoneiro`
+-- Estrutura para tabela `caminhoneiro`
 --
 
 CREATE TABLE `caminhoneiro` (
@@ -66,7 +64,7 @@ CREATE TABLE `caminhoneiro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `caminhoneiro`
+-- Fazendo dump de dados para tabela `caminhoneiro`
 --
 
 INSERT INTO `caminhoneiro` (`cod_caminhoneiro`, `nome`, `email`, `telefone`, `senha`, `rg`, `cpf`, `num_antt`, `num_cnh`, `categoria_cnh`, `cod_cidade`) VALUES
@@ -80,7 +78,7 @@ INSERT INTO `caminhoneiro` (`cod_caminhoneiro`, `nome`, `email`, `telefone`, `se
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `carreta`
+-- Estrutura para tabela `carreta`
 --
 
 CREATE TABLE `carreta` (
@@ -91,7 +89,7 @@ CREATE TABLE `carreta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `carreta`
+-- Fazendo dump de dados para tabela `carreta`
 --
 
 INSERT INTO `carreta` (`cod_carreta`, `ano_fabricacao`, `ano_modelo`, `cod_produto`) VALUES
@@ -100,7 +98,7 @@ INSERT INTO `carreta` (`cod_carreta`, `ano_fabricacao`, `ano_modelo`, `cod_produ
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cidade`
+-- Estrutura para tabela `cidade`
 --
 
 CREATE TABLE `cidade` (
@@ -110,7 +108,7 @@ CREATE TABLE `cidade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `cidade`
+-- Fazendo dump de dados para tabela `cidade`
 --
 
 INSERT INTO `cidade` (`cod_cidade`, `nome`, `cod_estado`) VALUES
@@ -120,7 +118,7 @@ INSERT INTO `cidade` (`cod_cidade`, `nome`, `cod_estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `estado`
+-- Estrutura para tabela `estado`
 --
 
 CREATE TABLE `estado` (
@@ -130,7 +128,7 @@ CREATE TABLE `estado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `estado`
+-- Fazendo dump de dados para tabela `estado`
 --
 
 INSERT INTO `estado` (`cod_estado`, `siglauf`, `nome`) VALUES
@@ -141,7 +139,7 @@ INSERT INTO `estado` (`cod_estado`, `siglauf`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `inscricao`
+-- Estrutura para tabela `inscricao`
 --
 
 CREATE TABLE `inscricao` (
@@ -151,7 +149,7 @@ CREATE TABLE `inscricao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `inscricao`
+-- Fazendo dump de dados para tabela `inscricao`
 --
 
 INSERT INTO `inscricao` (`cod_servico`, `data_insc`, `status`) VALUES
@@ -160,7 +158,7 @@ INSERT INTO `inscricao` (`cod_servico`, `data_insc`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `modelo`
+-- Estrutura para tabela `modelo`
 --
 
 CREATE TABLE `modelo` (
@@ -170,7 +168,7 @@ CREATE TABLE `modelo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `modelo`
+-- Fazendo dump de dados para tabela `modelo`
 --
 
 INSERT INTO `modelo` (`cod_modelo`, `nome`, `cod_montadora`) VALUES
@@ -179,7 +177,7 @@ INSERT INTO `modelo` (`cod_modelo`, `nome`, `cod_montadora`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `montadora`
+-- Estrutura para tabela `montadora`
 --
 
 CREATE TABLE `montadora` (
@@ -188,7 +186,7 @@ CREATE TABLE `montadora` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `montadora`
+-- Fazendo dump de dados para tabela `montadora`
 --
 
 INSERT INTO `montadora` (`cod_montadora`, `nome`) VALUES
@@ -199,7 +197,7 @@ INSERT INTO `montadora` (`cod_montadora`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `servico`
+-- Estrutura para tabela `servico`
 --
 
 CREATE TABLE `servico` (
@@ -219,7 +217,7 @@ CREATE TABLE `servico` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `status_servico`
+-- Estrutura para tabela `status_servico`
 --
 
 CREATE TABLE `status_servico` (
@@ -230,7 +228,7 @@ CREATE TABLE `status_servico` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_caminhao`
+-- Estrutura para tabela `tipo_caminhao`
 --
 
 CREATE TABLE `tipo_caminhao` (
@@ -239,7 +237,7 @@ CREATE TABLE `tipo_caminhao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `tipo_caminhao`
+-- Fazendo dump de dados para tabela `tipo_caminhao`
 --
 
 INSERT INTO `tipo_caminhao` (`cod_tipo`, `descricao`) VALUES
@@ -248,7 +246,7 @@ INSERT INTO `tipo_caminhao` (`cod_tipo`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_produto`
+-- Estrutura para tabela `tipo_produto`
 --
 
 CREATE TABLE `tipo_produto` (
@@ -257,7 +255,7 @@ CREATE TABLE `tipo_produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `tipo_produto`
+-- Fazendo dump de dados para tabela `tipo_produto`
 --
 
 INSERT INTO `tipo_produto` (`cod_produto`, `descricao`) VALUES
@@ -267,7 +265,7 @@ INSERT INTO `tipo_produto` (`cod_produto`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `transportadora`
+-- Estrutura para tabela `transportadora`
 --
 
 CREATE TABLE `transportadora` (
@@ -282,19 +280,20 @@ CREATE TABLE `transportadora` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `transportadora`
+-- Fazendo dump de dados para tabela `transportadora`
 --
 
 INSERT INTO `transportadora` (`cod_transportadora`, `nome`, `email`, `telefone`, `senha`, `razao_social`, `cnpj`, `cidade_cod_cidade`) VALUES
 (1, 'Silvio Santos', 'silvio@gmail.com', '4796647979', '123', '123', 123, 1),
-(2, 'Ostel Cargas', 'ostel.cargas@gmail.com', '02161-170 ', '123', 'Ostel Transportes Ltda.', 1312312323, 2);
+(2, 'Ostel Cargas', 'ostel.cargas@gmail.com', '02161-170 ', '123', 'Ostel Transportes Ltda.', 1312312323, 2),
+(3, 'mario', 'mario@gmail.com', '12312312312', '123', '', 123, 1);
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `caminhao`
+-- Índices de tabela `caminhao`
 --
 ALTER TABLE `caminhao`
   ADD PRIMARY KEY (`cod_caminhao`,`cod_caminhoneiro`),
@@ -303,53 +302,53 @@ ALTER TABLE `caminhao`
   ADD KEY `fk_caminhao_caminhoneiro1_idx` (`cod_caminhoneiro`);
 
 --
--- Indexes for table `caminhoneiro`
+-- Índices de tabela `caminhoneiro`
 --
 ALTER TABLE `caminhoneiro`
   ADD PRIMARY KEY (`cod_caminhoneiro`),
   ADD KEY `fk_caminhoneiro1_cidade1_idx` (`cod_cidade`);
 
 --
--- Indexes for table `carreta`
+-- Índices de tabela `carreta`
 --
 ALTER TABLE `carreta`
   ADD PRIMARY KEY (`cod_carreta`),
   ADD KEY `cod_produto` (`cod_produto`);
 
 --
--- Indexes for table `cidade`
+-- Índices de tabela `cidade`
 --
 ALTER TABLE `cidade`
   ADD PRIMARY KEY (`cod_cidade`),
   ADD KEY `cod_estado` (`cod_estado`);
 
 --
--- Indexes for table `estado`
+-- Índices de tabela `estado`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`cod_estado`);
 
 --
--- Indexes for table `inscricao`
+-- Índices de tabela `inscricao`
 --
 ALTER TABLE `inscricao`
   ADD KEY `cod_servico` (`cod_servico`);
 
 --
--- Indexes for table `modelo`
+-- Índices de tabela `modelo`
 --
 ALTER TABLE `modelo`
   ADD PRIMARY KEY (`cod_modelo`),
   ADD KEY `cod_montadora` (`cod_montadora`);
 
 --
--- Indexes for table `montadora`
+-- Índices de tabela `montadora`
 --
 ALTER TABLE `montadora`
   ADD PRIMARY KEY (`cod_montadora`);
 
 --
--- Indexes for table `servico`
+-- Índices de tabela `servico`
 --
 ALTER TABLE `servico`
   ADD PRIMARY KEY (`cod_servico`),
@@ -358,58 +357,60 @@ ALTER TABLE `servico`
   ADD KEY `cod_produto` (`cod_produto`);
 
 --
--- Indexes for table `status_servico`
+-- Índices de tabela `status_servico`
 --
 ALTER TABLE `status_servico`
   ADD PRIMARY KEY (`cod_status`);
 
 --
--- Indexes for table `tipo_caminhao`
+-- Índices de tabela `tipo_caminhao`
 --
 ALTER TABLE `tipo_caminhao`
   ADD PRIMARY KEY (`cod_tipo`);
 
 --
--- Indexes for table `tipo_produto`
+-- Índices de tabela `tipo_produto`
 --
 ALTER TABLE `tipo_produto`
   ADD PRIMARY KEY (`cod_produto`);
 
 --
--- Indexes for table `transportadora`
+-- Índices de tabela `transportadora`
 --
 ALTER TABLE `transportadora`
   ADD PRIMARY KEY (`cod_transportadora`),
   ADD KEY `fk_transportadora_cidade1_idx` (`cidade_cod_cidade`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `caminhoneiro`
+-- AUTO_INCREMENT de tabela `caminhoneiro`
 --
 ALTER TABLE `caminhoneiro`
   MODIFY `cod_caminhoneiro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
 --
--- AUTO_INCREMENT for table `cidade`
+-- AUTO_INCREMENT de tabela `cidade`
 --
 ALTER TABLE `cidade`
   MODIFY `cod_cidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
--- AUTO_INCREMENT for table `estado`
+-- AUTO_INCREMENT de tabela `estado`
 --
 ALTER TABLE `estado`
   MODIFY `cod_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `transportadora`
+--
+ALTER TABLE `transportadora`
+  MODIFY `cod_transportadora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- Restrições para dumps de tabelas
+--
 
 --
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `caminhao`
+-- Restrições para tabelas `caminhao`
 --
 ALTER TABLE `caminhao`
   ADD CONSTRAINT `caminhao_ibfk_1` FOREIGN KEY (`cod_tipo`) REFERENCES `tipo_caminhao` (`cod_tipo`),
@@ -417,37 +418,37 @@ ALTER TABLE `caminhao`
   ADD CONSTRAINT `fk_caminhao_caminhoneiro1` FOREIGN KEY (`cod_caminhoneiro`) REFERENCES `caminhoneiro` (`cod_caminhoneiro`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `caminhoneiro`
+-- Restrições para tabelas `caminhoneiro`
 --
 ALTER TABLE `caminhoneiro`
   ADD CONSTRAINT `fk_caminhoneiro1_cidade1` FOREIGN KEY (`cod_cidade`) REFERENCES `cidade` (`cod_cidade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `carreta`
+-- Restrições para tabelas `carreta`
 --
 ALTER TABLE `carreta`
   ADD CONSTRAINT `carreta_ibfk_1` FOREIGN KEY (`cod_produto`) REFERENCES `tipo_produto` (`cod_produto`);
 
 --
--- Limitadores para a tabela `cidade`
+-- Restrições para tabelas `cidade`
 --
 ALTER TABLE `cidade`
   ADD CONSTRAINT `cidade_ibfk_1` FOREIGN KEY (`cod_estado`) REFERENCES `estado` (`cod_estado`);
 
 --
--- Limitadores para a tabela `inscricao`
+-- Restrições para tabelas `inscricao`
 --
 ALTER TABLE `inscricao`
   ADD CONSTRAINT `inscricao_ibfk_1` FOREIGN KEY (`cod_servico`) REFERENCES `servico` (`cod_servico`);
 
 --
--- Limitadores para a tabela `modelo`
+-- Restrições para tabelas `modelo`
 --
 ALTER TABLE `modelo`
   ADD CONSTRAINT `modelo_ibfk_1` FOREIGN KEY (`cod_montadora`) REFERENCES `montadora` (`cod_montadora`);
 
 --
--- Limitadores para a tabela `servico`
+-- Restrições para tabelas `servico`
 --
 ALTER TABLE `servico`
   ADD CONSTRAINT `servico_ibfk_1` FOREIGN KEY (`cod_status`) REFERENCES `status_servico` (`cod_status`),
@@ -455,11 +456,10 @@ ALTER TABLE `servico`
   ADD CONSTRAINT `servico_ibfk_3` FOREIGN KEY (`cod_produto`) REFERENCES `tipo_produto` (`cod_produto`);
 
 --
--- Limitadores para a tabela `transportadora`
+-- Restrições para tabelas `transportadora`
 --
 ALTER TABLE `transportadora`
   ADD CONSTRAINT `fk_transportadora_cidade1` FOREIGN KEY (`cidade_cod_cidade`) REFERENCES `cidade` (`cod_cidade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
