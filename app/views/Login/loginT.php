@@ -9,12 +9,12 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- As 3 tags meta acima * devem * vir primeiro na cabeça;
+    <!-- As 3 tags meta acima * devem * vir primeiro na cabeça <head>;
     Qualquer outro conteúdo principal deve vir * após * estas tags -->
     <meta name="author" content="Bruno Pinheiro">
     <meta name="description" content="">
 
-    <title> The way - A página que guia você </title>
+       <title> The way - A página que guia você </title>
 
     <!-- Importação do CSS -->
     <link href="../../../assets/css/signin.css" rel="stylesheet">
@@ -25,7 +25,6 @@ session_start();
     <link href="../../../assets/css/main.css" rel="stylesheet">
     <link href="../../../assets/css/responsive.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../../assets/images/logo.png">
-    <!--<link rel="icon" href="../../favicon.ico">-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
 
     <script src="../../../assets/js/html5shiv.js">  </script>
@@ -60,7 +59,7 @@ session_start();
         </div>
 
     <!-- Form inicio -->
-    <form class="form-signin" action="../../controllers/login.php" method="POST">
+    <form class="form-signin" action="../../controllers/loginT.php" method="POST">
 
         <h2 class="form-signin-heading">         Entre em sua conta Transportadora </h2>
         <label for="inputEmail" class="sr-only"> Endereço de e-mail </label>
