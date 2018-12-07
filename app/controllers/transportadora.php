@@ -11,18 +11,26 @@ if (!isset($_SESSION)) {
 
 
 function index(){
-    listar();
+    listar_transportadora();
 }
 
-function listar(){    //todo trocar listar por perfil
+function listar_transportadora(){    //todo trocando listar por perfil
+  //  var_dump($_POST);
+  //  exit();
+    $transportadoras = new Crudtransportadora();
+    $listatransportadoras = $transportadoras->getTransportadora();
 
+    include __DIR__ . "/../views/Transportadora/transportadora_listar.php";
+
+}
+function listar_transportadoras(){    //todo trocar listar por perfil
+    //_transportadora
     $transportadoras = new Crudtransportadora();
     $listatransportadoras = $transportadoras->gettransportadoras();
 
     include __DIR__ . "/../views/Transportadora/transportadora_listar.php";
 
 }
-
 function cadastro(){
 
     include __DIR__ . "/../views/Transportadora/transportadora_cadastro.php";
@@ -37,12 +45,34 @@ function cadastrar(){
     $transportadora->senha             = filter_input(INPUT_POST, 'senha',             FILTER_SANITIZE_STRING);
     $transportadora->razao_social      = filter_input(INPUT_POST, 'razo_social',       FILTER_SANITIZE_STRING);
     $transportadora->cnpj              = filter_input(INPUT_POST, 'cnpj',              FILTER_SANITIZE_STRING);
-    $transportadora->cod_cidade        = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
+    $transportadora->cod_cidade        = filter_input(INPUT_POST, 'cidade',            FILTER_SANITIZE_STRING);
 
     $crud_transportadora = new CrudTransportadora();
     $crud_transportadora->salvar($transportadora);
+    var_dump($_SESSION);
+    //exit();
+    //listar_transportadora();
+    //session_start();
+    $login =  $_POST['email'];
+    $senha =  $_POST['senha'];
+    $listaTransportadora = $crud_transportadora->gettransportadoras();
+    var_dump($listaTransportadora);
+    $_SESSION['transportadora_existe'] = false;
+    foreach ($listaTransportadora as $Transportadora){
 
-    listar();
+        if ($login == $Transportadora['email'] AND $senha == $Transportadora['senha'] ) {
+            $_SESSION = $Transportadora;
+            $_SESSION['usuario_online'] = true;
+            $_SESSION['transportadora_existe'] = true;
+        }
+    }
+    // var_dump($_SESSION);
+    if ($_SESSION['transportadora_existe'] == true) {
+        echo 'oi';
+        //exit();
+        include '../views/Y-Importar/cabecalho_padrao.php';
+        include '../views/Transportadora/perfilTransportadora.php';
+    }
 
 }
 
@@ -70,8 +100,7 @@ if (isset($_GET['acao']) and function_exists($_GET['acao'])) {
 
 } else {
 
-    index();
-    //header('Location: ../../index.php');
+    index(); // Redireciona á index
 
 }
 

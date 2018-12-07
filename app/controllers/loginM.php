@@ -1,11 +1,13 @@
 <?php
-require_once __DIR__."/../../config.php";
+
 require_once "../models/Caminhoneiro.php";
 require_once "../cruds/CrudCaminhoneiro.php";
 require_once "../models/Transportadora.php";
 require_once "../cruds/CrudTransportadora.php";
 require_once "../models/Servico.php";
 require_once "../cruds/CrudServico.php";
+
+
 function verificar_caminhoneiro(){
     
     $CrudServico = new CrudServico();
