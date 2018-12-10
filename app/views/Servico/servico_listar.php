@@ -33,6 +33,7 @@
                 <th scope="col"> cod_produto        </th>
                 <th scope="col">     #              </th>
                 <th scope="col">     #              </th>
+                <th scope="col">     #              </th>
             </tr>
             </thead>
             <tbody>
@@ -54,9 +55,9 @@
                 <td><?= $servico['cod_produto'] ?> </td>
                 <td><a class="btn btn-info"   href="http://localhost/The-Way-Final-master/app/controllers/servico.php?acao=editar&id_servico= <?= $servico['cod_servico'] ?>"> Editar  </a></td>
                 <td><a class="btn btn-danger" href="http://localhost/The-Way-Final-master/app/controllers/servico.php?acao=excluir&id_servico=<?= $servico['cod_servico'] ?>"> Excluir </a></td>
+                <td><a class="btn btn-lg"     href="http://localhost/The-Way-Final-master/app/views/Transportadora/perfilTransportadora.php">  Voltar </a></td>
             </tr>
 
-            <button class="btn btn-info" href="../Transportadora/perfilTransportadora.html" > Voltar </button>
 
             <?php endforeach; ?>
 

@@ -14,7 +14,7 @@ session_start();
     <meta name="author" content="Bruno Pinheiro">
     <meta name="description" content="">
 
-      <title> The way - A página que guia você </title>
+       <title> The way - A página que guia você </title>
 
     <!-- Importação do CSS -->
     <link href="../../../assets/css/signin.css" rel="stylesheet">
@@ -36,45 +36,46 @@ session_start();
 
 <div class="banner"><img class="seven-logo" src="../../../assets/images/logo.png" alt="logo_centro"></div>
 
-<div class="container-fluid">
 
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <div class="column is-4 is-offset-4">
+<div class="hero-body">
+    <div class="container has-text-centered">
+        <div class="column is-4 is-offset-4">
 
-                <?php if(isset($_SESSION['nao_autenticado'])): ?>
+            <?php if(isset($_SESSION['nao_autenticado'])): ?>
 
-                    <div class="notification is-danger">
+                <div class="notification is-danger">
 
-                        <p> ERRO: Usuário ou senha inválidos. </p>
+                    <p> ERRO: Usuário ou senha inválidos. </p>
 
-                    </div>
+                </div>
 
-                <?php
-                endif;
-                unset($_SESSION['nao_autenticado']);
-                ?>
+            <?php
+            endif;
+            unset($_SESSION['nao_autenticado']);
+            ?>
 
-            </div>
         </div>
     </div>
+</div>
 
-    <!-- Form inicio -->
-    <form class="form-signin" action="../../controllers/login.php" method="POST">
+<!-- Form inicio -->
+<form class="form-signin" action="../../controllers/login.php" method="POST">
 
-        <h2 class="form-signin-heading">         Entre em sua conta Caminhoneiro </h2>
-        <label for="inputEmail" class="sr-only"> Endereço de e-mail </label>
-        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus>
-        <label for="inputPassword" class="sr-only"> Senha </label>
-        <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
+    <h2 class="form-signin-heading">         Entre em sua conta Caminhoneiro </h2>
+    <label for="inputEmail" class="sr-only"> Endereço de e-mail </label>
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus>
+    <label for="inputPassword" class="sr-only"> Senha </label>
+    <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
 
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> lembre-se de mim </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit"> Logar </button>
-    </form>
-    <!-- /Form --></div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="remember-me"> lembre-se de mim </label>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit"> Logar </button>
+
+</form>
+<!-- /Form -->
 
 <!-- Botão para Home -->
 <div style="text-align: center;">

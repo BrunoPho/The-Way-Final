@@ -1,3 +1,30 @@
+<?php
+
+require_once __DIR__ . "/../../cruds/CrudCaminhoneiro.php";
+require_once __DIR__ . "/../../models/Caminhoneiro.php";
+
+
+//inicia a sessão
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+function verifica_login(){
+
+    if (!isset($_SESSION['cod_caminhoneiro'])) {
+        header('Location: ../../index.html');
+    }
+
+}
+
+verifica_login();
+
+$caminhoneiro = new CrudCaminhoneiro();
+$perfil_caminhoneiro = $caminhoneiro->getCaminhoneiro($_SESSION['cod_caminhoneiro']);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
  <head>
@@ -60,7 +87,7 @@
           <ul class="nav navbar-nav navbar-right">
 
             <li class="scroll"><a href="../Y-Importar/ajuda.html">       Ajuda </a></li>
-            <li class="scroll"><a href="../../../index.html"> Sair  </a></li>
+            <li class="scroll"><a href="http://localhost/The-Way-Final-master/app/controllers/caminhoneiro.php?acao=sair"> Sair  </a></li>
 
           </ul>
         </div>
@@ -73,9 +100,9 @@
       <div class="row">
         <div class="lateral col-md-2">
           
-          <div class="moldura-foto-perfil">
+          <!--<div class="moldura-foto-perfil">
             <img src="../../../assets/images/binocargapesada.jpg" alt="">
-          </div>
+          </div>-->
           
           <h3> Bino Farias </h3>
 
@@ -90,8 +117,6 @@
               <li class="scroll"><a href="MeusCaminhoes.php">        Meus Caminhões </a></li></button>
             <button type="submit" class="btn btn-default">
               <li class="scroll"><a href="info_carga.php"> Novas cargas   </a></li></button>
-            <button type="submit" class="btn btn-default">
-              <li class="scroll"><a href="configuracoes.php">     Configurações  </a></li></button>
           </ul>
 
         </div>
@@ -100,6 +125,7 @@
         <div class="col-md-10">
           <nav class="navbar navbar-default">
             <div class="container-fluid">
+
               <!-- Marca e alternar agrupados para melhor exibição móvel -->
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -109,84 +135,26 @@
                   <span class="icon-bar"></span>
                 </button>
 
-                  <form class="form" action="#" method="POST" id="hometrasportadora">
-
-                      <h1> Meus dados </h1>
+               <h1> Meus dados </h1>
 
                       <hr>
 
                       <div class="container">
 
-                          <tbody>
+                      <table>
+                       <tbody>
 
-                          <?php foreach ($listatransportadoras as $transportadora): ?>
-
-                              <tr>
-                                  <th scope="row"><?= $transportadora['cod_transportadora'] ?></th>
-                                  <td><?= $transportadora['nome']              ?> </td>
-                                  <td><?= $transportadora['email']             ?> </td>
-                                  <td><?= $transportadora['telefone']          ?> </td>
-                                  <td><?= $transportadora['senha']             ?> </td>
-                                  <td><?= $transportadora['razao_social']      ?> </td>
-                                  <td><?= $transportadora['cnpj']              ?> </td>
-                                  <td><?= $transportadora['cidade_cod_cidade'] ?> </td>
-                              </tr>
-
-                          <?php endforeach; ?>
+                      <tb>
+                          <tr>
+                              <pre><?php print_r($perfil_caminhoneiro); ?></pre>
+                          </tr>
+                      </tb>
 
                           </tbody>
-                          </table>
+                        </table>
                       </div>
 
                       <hr>
-
-                <a class="navbar-brand"> Meus Dados: </a>
-              </div>
-            </div><!-- /.container-fluid -->
-          </nav>
-
-          <nav aria-label="breadcrumb" role="navigation">
-			  <ol class="breadcrumb">
-			    <li class="breadcrumb-item active" aria-current="page"> Nome completo: Bino Farias </li>
-			  </ol>
-			</nav>
-
-			<nav aria-label="breadcrumb" role="navigation">
-			  <ol class="breadcrumb">
-			    <!-- <li class="breadcrumb-item"> Gmail: </li> -->
-			    <li class="breadcrumb-item active" aria-current="page"> Email: binofarias@gmail.com </li>
-			  </ol>
-			</nav>
-
-			<nav aria-label="breadcrumb" role="navigation">
-			  <ol class="breadcrumb">
-			    <!-- <li class="breadcrumb-item"> Telefone: </li> -->
-			    <li class="breadcrumb-item active" aria-current="page"> Telefone: (49) 9725-7995 </li>
-			  </ol>
-			</nav>
-			<ol class="breadcrumb">
-		  <!-- <li class="breadcrumb-item active" aria-current="page"> Data de nascimento: </li> -->
-          <li class="breadcrumb-item"> Data de nascimento: 28 </li>
-          <li class="breadcrumb-item"> 04 </li>
-          <li class="breadcrumb-item"> 1972. </li>
-			  </ol>
-
-            <nav aria-label="breadcrumb" role="navigation">
-			  <ol class="breadcrumb">
-			  <!-- <li class="breadcrumb-item"> Estado: </li> -->
-			    <li class="breadcrumb-item active" aria-current="page"> Estado: MG </li>
-			  </ol>
-			</nav>
-
-			<nav aria-label="breadcrumb" role="navigation">
-			  <ol class="breadcrumb">
-			    <!--<li class="breadcrumb-item"> Senha: </li> -->
-			    <li class="breadcrumb-item"> Senha: ******** </li>
-			  </ol>
-			</nav>
-        </div>
-        </div>
-      </div>
 
   <footer id="footer">
     <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">

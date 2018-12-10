@@ -63,14 +63,14 @@
       <div class="row">
         <div class="lateral col-md-2">
           
-          <div class="moldura-foto-perfil">
+          <!--<div class="moldura-foto-perfil">
             <img src="../../../assets/images/binocargapesada.jpg" alt="">
-          </div>
+          </div>-->
           
           <h3> Bino Farias </h3>
 
             <ul class="button">
-                <button type="submit" class="btn btn-info">
+                <button type="submit" class="btn btn-default">
                     <li class="scroll"><a href="perfilCaminhoneiro.php"> Meus Dados </a></li></button>
                 <button type="submit" class="btn btn-default">
                     <li class="scroll"><a href="MeusFretes.php"> Fretes </a></li></button>
@@ -80,8 +80,6 @@
                     <li class="scroll"><a href="MeusCaminhoes.php"> Meus Caminhões </a></li></button>
                 <button type="submit" class="btn btn-default">
                     <li class="scroll"><a href="info_carga.php">  Novas cargas </a></li></button>
-                <button type="submit" class="btn btn-default">
-                    <li class="scroll"><a href="configuracoes.php">          Configurações   </a></li></button>
             </ul>
 
 

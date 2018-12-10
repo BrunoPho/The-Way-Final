@@ -1,3 +1,14 @@
+<?php
+
+require_once __DIR__ . "/../../cruds/CrudServico.php";
+require_once __DIR__ . "/../../models/Servico.php";
+
+//$servico = new Crudservico();
+//$perfil_servico = $servico->getservico($_SESSION['cod_servico']);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -89,14 +100,14 @@
             <div class="row">
                 <div class="lateral col-md-2">
 
-                    <div class="moldura-foto-perfil">
+                    <!--<div class="moldura-foto-perfil">
                         <img src="../../../assets/images/binocargapesada.jpg" alt="">
-                    </div>
+                    </div>-->
 
                     <h3> Bino Farias </h3>
 
                     <ul class="button">
-                        <button type="submit" class="btn btn-info">
+                        <button type="submit" class="btn btn-default">
                             <li class="scroll"><a href="perfilCaminhoneiro.php"> Meus Dados </a></li>
                         </button>
                         <button type="submit" class="btn btn-default">
@@ -110,9 +121,6 @@
                         </button>
                         <button type="submit" class="btn btn-default">
                             <li class="scroll"><a href="info_carga.php"> Novas cargas </a></li>
-                        </button>
-                        <button type="submit" class="btn btn-default">
-                            <li class="scroll"><a href="configuracoes.php"> Configurações </a></li>
                         </button>
                     </ul>
                </div>
@@ -133,102 +141,45 @@
                                 </div>
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                                    <div class="jumbotron">
-                                        <h1 class="display-4">Olá Bino Farias!</h1>
-                                        <p class="lead">Estas são algumas das ofertas disponíveis, em pouco tempo
-                                            chegarão mais. Fique ligado e aproveite o caminho!</p>
-                                        <hr class="my-4">
-                                        <div class="container">
+                                <!--<h2 class="display-4"> <?/*= $caminhoneiro['nome'] */?> </h2>-->
 
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Endereço de email</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                                                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Endereço de email</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                                                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Endereço de email</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                                                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Endereço de email</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                                                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Endereço de email</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                                                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Endereço de email</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                                                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Endereço de email</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                                                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Endereço de email</label>
-                                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                                                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-                                                </div>
-                                                </div>
-                                              </form>
+                                <p class="lead"> Estas são algumas das ofertas disponíveis, em pouco tempo chegarão mais. Fique ligado!</p>
+                                <hr class="my-4">
+                                <div class="container">
 
-                                            <div class="grid-container">
-                                                <div class="grid-item">
-                                                    <c>Petrobras</c>
-                                                    <p>transporte de Petróleo entre São Paulo e Salvador</p>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <c>Rei do gado</c>
-                                                    <p>Transporte de gado entre Mato Grosso e Mato Grosso do Sul</p>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <c>Rei Do Bacon</c>
-                                                    <p>transporte de Suínos entre Santa Catarina e Paraná</p>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <c>BrasilTransportes</c>
-                                                    <p>transporte de sója entre Rio Grande Do Sul e Paraná</p>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <c>Carga+</c>
-                                                    <p>transporte de milho entre Acre e Amapá</p>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <c>General Transportadora</c>
-                                                    <p>transporte de Whiskey entre São Paulo e Espírito Santo</p>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <c>Terlogs</c>
-                                                    <p>transporte de madeira entre Amazonas e Maranhão</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <hr>
+
+                                    <div class="container">
+
+                                        <table>
+                                            <tbody>
+
+                                            <tb>
+                                                <tr>
+                                                    <pre><?php print_r($perfil_servico); ?></pre>
+                                                </tr>
+                                            </tb>
+
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <footer id="footer">
+
+                                    <hr>
+
+                                </div>
+
+                                <footer id="footer">
                                         <div class="footer-top wow fadeInUp" data-wow-duration="1000ms"
                                              data-wow-delay="300ms">
                                             <div class="container text-center">
                                                 <div class="footer-logo">
-                                                    <a href="../../../index.html"><img class="img-responsive"
-                                                                                       src="../../../assets/images/logo.png"
-                                                                                       alt=""></a>
+                                                    <a href="../../../index.html"><img class="img-responsive" src="../../../assets/images/logo.png" alt="" ></a>
                                                 </div>
+
                                                 <div class="social-icons">
                                                 </div>
+
                                             </div>
                                         </div>
                                         <div class="footer-bottom">

@@ -1,3 +1,31 @@
+<?php
+
+require_once __DIR__ . "/../../cruds/CrudTransportadora.php";
+require_once __DIR__ . "/../../models/Transportadora.php";
+
+
+//inicia a sessão
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+function verifica_login(){
+
+    if (!isset($_SESSION['cod_transportadora'])) {
+        header('Location: ../../index.html');
+    }
+
+}
+
+verifica_login();
+
+$transportadoras = new Crudtransportadora();
+$perfil_transportadora = $transportadoras->getTransportadora($_SESSION['cod_transportadora']);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,7 +54,7 @@
 
   <script src="maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="cdnjs.cloudflare.com/ajax/libs/jquery/3.3.7/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.7/jquery.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.7/jquery.min.js"></script>-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../../../assets/js/jquery.js"></script>
   <script type="text/javascript" src="../../../assets/js/bootstrap.min.js"></script>
@@ -63,7 +91,7 @@
         <ul class="nav navbar-nav navbar-right">
 
           <li class="scroll"><a href="../Y-Importar/ajuda.html"> Ajuda </a></li>
-          <li class="scroll"><a href="../../../index.html">      Sair  </a></li>
+          <li class="scroll"><a href="http://localhost/The-Way-Final-master/app/controllers/transportadora.php?acao=sair"> Sair </a></li>
 
         </ul>
       </div>
@@ -114,22 +142,17 @@
 
               <div class="container">
 
+                 <table>
                   <tbody>
 
-                   <?php foreach ($listatransportadoras as $transportadora): ?>
 
+                      <tb>
                           <tr>
-                              <th scope="row"><?= $transportadora['cod_transportadora'] ?></th>
-                              <td><?= $transportadora['nome']              ?> </td>
-                              <td><?= $transportadora['email']             ?> </td>
-                              <td><?= $transportadora['telefone']          ?> </td>
-                              <td><?= $transportadora['senha']             ?> </td>
-                              <td><?= $transportadora['razao_social']      ?> </td>
-                              <td><?= $transportadora['cnpj']              ?> </td>
-                              <td><?= $transportadora['cidade_cod_cidade'] ?> </td>
+                              <pre><?php print_r($perfil_transportadora); ?></pre>
                           </tr>
+                      </tb>
 
-                      <?php endforeach; ?>
+
 
                      </tbody>
                   </table>
