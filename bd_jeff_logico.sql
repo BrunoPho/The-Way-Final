@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 06/12/2018 às 11:00
+-- Tempo de geração: 10/12/2018 às 12:04
 -- Versão do servidor: 5.7.21-0ubuntu0.16.04.1
 -- Versão do PHP: 7.0.22-0ubuntu0.16.04.1
 
@@ -73,7 +73,11 @@ INSERT INTO `caminhoneiro` (`cod_caminhoneiro`, `nome`, `email`, `telefone`, `se
 (5, 'medicina', 'felipepassig@hotmail.com', '4799999886', '123', '123', '123', '123', '123', 'a', 1),
 (10, 'dsad', 'as@gcf', '12311231223', '13', '213', '231', '1213', '1231', 'e', 1),
 (11, 'dsad', 'as@gcf', '12311231223', '13', '213', '231', '1213', '1231', 'e', 1),
-(12, 'dsad', 'as@gcf', '12311231223', '13', '213', '231', '1213', '1231', 'e', 1);
+(12, 'dsad', 'as@gcf', '12311231223', '13', '213', '231', '1213', '1231', 'e', 1),
+(19, 'ASD', 'ASD@dfsd', '12312312312', '123', '123', '123', '123', '123', 'E', 1),
+(20, 'asd', 'das@das', '12312312312', '123', '123', '123', '123', '123', 'E', 1),
+(21, 'asd', 'asd@wrw', '12312312312', '123', '123', '123', '123', '123', 'e', 1),
+(22, 'OJP', 'OJP@gmail.com', '12312312312', '123', '123', '123', '123', '123', 'E', 1);
 
 -- --------------------------------------------------------
 
@@ -214,6 +218,25 @@ CREATE TABLE `servico` (
   `cod_produto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Fazendo dump de dados para tabela `servico`
+--
+
+INSERT INTO `servico` (`numero_seguro`, `data_entrega`, `cod_servico`, `data_cadastro`, `quantidade`, `data_retirada`, `data_retirada_prev`, `data_entrega_prev`, `cod_status`, `cod_cidade`, `cod_produto`) VALUES
+(123, '0123-03-12', 123, '0123-03-12', 123, '1231-03-12', '1231-03-12', '1231-03-12', 1, 1, 1),
+(666, '2018-11-30', 666, '2018-11-29', 666, '2018-12-07', '2019-01-05', '2018-12-15', 1, 1, 1),
+(3242, '2018-12-06', 2342, '2018-12-27', 234, '2018-12-29', '2018-12-07', '2018-12-31', 1, 1, 1),
+(888888, '2018-12-07', 8888, '2018-12-31', 123, '2019-01-02', '2018-12-12', '2019-01-05', 1, 2, 1),
+(7543123, '2018-11-29', 12364, '2018-12-12', 123, '2018-12-03', '2018-12-06', '2018-12-07', 1, 1, 1),
+(12375, '0123-03-12', 12374, '0123-03-12', 123, '1231-03-12', '1231-03-12', '1231-03-12', 1, 1, 1),
+(867234, '2018-12-12', 62373, '2018-12-14', 123, '2018-12-25', '2018-12-19', '2018-12-27', 1, 1, 1),
+(666666612, '2018-11-30', 66123, '2018-11-29', 666, '2018-12-07', '2019-01-05', '2018-12-15', 1, 1, 1),
+(123321, '2018-11-30', 123321, '2018-11-29', 123, '2018-12-07', '2019-01-05', '2018-12-15', 1, 1, 1),
+(984, '2018-12-10', 234234, '2018-12-15', 42134, '2018-12-27', '2018-12-31', '2018-12-06', 1, 1, 1),
+(88888876, '2018-12-07', 678888, '2018-12-31', 123, '2019-01-02', '2018-12-12', '2019-01-05', 1, 2, 1),
+(78786, '2018-12-06', 7867867, '2018-12-06', 678678, '2018-11-29', '2018-12-15', '2018-12-12', 1, 1, 1),
+(62516, '2018-12-07', 563415345, '2018-12-19', 342, '2018-12-25', '2018-12-14', '2018-12-20', 1, 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -224,6 +247,13 @@ CREATE TABLE `status_servico` (
   `cod_status` int(11) NOT NULL,
   `desc_status` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `status_servico`
+--
+
+INSERT INTO `status_servico` (`cod_status`, `desc_status`) VALUES
+(1, '123');
 
 -- --------------------------------------------------------
 
@@ -286,7 +316,18 @@ CREATE TABLE `transportadora` (
 INSERT INTO `transportadora` (`cod_transportadora`, `nome`, `email`, `telefone`, `senha`, `razao_social`, `cnpj`, `cidade_cod_cidade`) VALUES
 (1, 'Silvio Santos', 'silvio@gmail.com', '4796647979', '123', '123', 123, 1),
 (2, 'Ostel Cargas', 'ostel.cargas@gmail.com', '02161-170 ', '123', 'Ostel Transportes Ltda.', 1312312323, 2),
-(3, 'mario', 'mario@gmail.com', '12312312312', '123', '', 123, 1);
+(3, 'mario', 'mario@gmail.com', '12312312312', '123', '', 123, 1),
+(4, 'asd', 'asd@esdf', '12312312123', '123', '', 123, 1),
+(5, 'asd', 'asd@esdf', '12312312123', '123', '', 123, 1),
+(6, 'ZCASD', 'SD@YGY', '12312312312', '123', '', 123, 1),
+(7, 'asd', 'asd@sf', '12312312312', '123', '', 123, 1),
+(8, 'sd', 'ad@da', '23123123123', '123', '', 123, 1),
+(9, 'sd', 'ad@da', '23123123123', '123', '', 123, 1),
+(10, 'sd', 'ad@da', '23123123123', '123', '', 123, 1),
+(11, 'fsdf', 'sdf@FSDF', '12312312312', '13', '', 123, 1),
+(12, 'ada', 'asd@s', '12312312312', '123', '', 123, 1),
+(13, 'ad', 'asd@da', '12312312312', '123', '', 123, 1),
+(14, 'OJP', 'OJP@gmail.com', '12312312312', '123', '', 123, 1);
 
 --
 -- Índices de tabelas apagadas
@@ -389,7 +430,7 @@ ALTER TABLE `transportadora`
 -- AUTO_INCREMENT de tabela `caminhoneiro`
 --
 ALTER TABLE `caminhoneiro`
-  MODIFY `cod_caminhoneiro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `cod_caminhoneiro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT de tabela `cidade`
 --
@@ -404,7 +445,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT de tabela `transportadora`
 --
 ALTER TABLE `transportadora`
-  MODIFY `cod_transportadora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cod_transportadora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- Restrições para dumps de tabelas
 --
