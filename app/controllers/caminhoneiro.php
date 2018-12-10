@@ -9,17 +9,42 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+function verifica_login(){
+
+    if (!isset($_SESSION['cod_caminhoneiro'])) {
+        header('Location: ../../index.html');
+    }
+
+}
+
 
 function index(){
     listar();
 }
 
-function listar(){    //todo trocar listar por perfil
+
+function perfil(){
+
+    verifica_login();
 
     $caminhoneiros = new Crudcaminhoneiro();
-    $listaCaminhoneiros = $caminhoneiros->getCaminhoneiros();
+    $perfil_caminhoneiro = $caminhoneiros->getCaminhoneiro($_SESSION['cod_caminhoneiro']);
 
-    include __DIR__ . "/../views/Caminhoneiro/caminhoneiro_listar.php";
+    include __DIR__ . "/../views/Caminhoneiro/perfilCaminhoneiro.php";
+}
+
+function sair(){
+    session_destroy();
+    header('Location: ../../index.html');
+
+}
+
+function listar(){
+
+    $caminhoneiros = new Crudcaminhoneiro();
+    $perfil_caminhoneiros = $caminhoneiros->getCaminhoneiros();
+
+    header('Location: ../views/Login/loginC.php');
 
 }
 
@@ -60,12 +85,12 @@ function editar(){
 
 }
 
- //Vai salvar e substituir o que foi o formulario (Atualizar)
+//Vai salvar e substituir o que foi o formulario (Atualizar)
 function salvar_editar(){
 
     $caminhoneiro = new CrudCaminhoneiro();
     $caminhoneiro->editar($_POST['id_caminhoneiro'], $_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['senha'], $_POST['rg'], $_POST['cpf'], $_POST['num_cnh'], $_POST['cod_cidade']);
-    
+
 }
 
 if (isset($_GET['acao']) and function_exists($_GET['acao'])) {
@@ -78,7 +103,6 @@ if (isset($_GET['acao']) and function_exists($_GET['acao'])) {
 }
 
 function excluir(){
-
 
     $caminhoneiro = new Crudcaminhoneiro();
     $caminhoneiro->excluircaminhoneiro($_GET['id_caminhoneiro']);

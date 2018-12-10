@@ -3,35 +3,51 @@
 require_once "../cruds/CrudTransportadora.php";
 require_once "../models/Transportadora.php";
 
-
 //inicia a sessão
 if (!isset($_SESSION)) {
     session_start();
 }
 
+function verifica_login(){
+
+    if (!isset($_SESSION['cod_transportadora'])) {
+        header('Location: ../../index.html');
+    }
+
+}
 
 function index(){
-    listar_transportadora();
+    listar();
 }
 
-/*function listar_transportadora(){    //todo trocando listar por perfil
-  //  var_dump($_POST);
-  //  exit();
+
+function perfil(){
+
+    verifica_login();
+
     $transportadoras = new Crudtransportadora();
-    $listatransportadoras = $transportadoras->getTransportadora();
-
-    include __DIR__ . "/../views/Transportadora/transportadora_listar.php";
-
-}*/
-
-function listar_transportadoras(){    //todo trocar listar por perfil
-    //_transportadora
-    $transportadoras = new Crudtransportadora();
-    $listatransportadoras = $transportadoras->gettransportadoras();
+    $perfil_transportadora = $transportadoras->getTransportadora($_SESSION['cod_transportadora']);
 
     include __DIR__ . "/../views/Transportadora/perfilTransportadora.php";
+}
+
+function sair(){
+    session_destroy();
+    header('Location: ../../index.html');
 
 }
+
+
+function listar(){
+
+    $transportadoras = new Crudtransportadora();
+    $listaTransportadoras = $transportadoras->getTransportadoras();
+
+    //include __DIR__ . "/../views/Login/loginT.php";
+    header('Location: ../views/Login/loginT.php');
+
+}
+
 function cadastro(){
 
     include __DIR__ . "/../views/Transportadora/transportadora_cadastro.php";
@@ -51,34 +67,7 @@ function cadastrar(){
     $crud_transportadora = new CrudTransportadora();
     $crud_transportadora->salvar($transportadora);
 
-    /*var_dump($_SESSION);
-    exit();*/
-
-    //listar_transportadora();
-
-    /*session_start();
-    $login =  $_POST['email'];
-    $senha =  $_POST['senha'];
-    $listaTransportadora = $crud_transportadora->gettransportadoras();
-    var_dump($listaTransportadora);
-    $_SESSION['transportadora_existe'] = false;
-    foreach ($listaTransportadora as $Transportadora){
-
-        if ($login == $Transportadora['email'] AND $senha == $Transportadora['senha'] ) {
-            $_SESSION = $Transportadora;
-            $_SESSION['usuario_online'] = true;
-            $_SESSION['transportadora_existe'] = true;
-        }
-    }
-
-    // var_dump($_SESSION);
-    if ($_SESSION['transportadora_existe'] == true) {
-        echo 'oi';
-        //exit();
-        include '../views/Y-Importar/cabecalho_padrao.php';
-        include '../views/Transportadora/perfilTransportadora.php';
-        //include '../views/Transportadora/transportadora_listar.php';
-    }*/
+    listar();
 
 }
 
@@ -101,14 +90,7 @@ function salvar_editar() {
 
 }
 
-if (isset($_GET['acao']) and function_exists($_GET['acao'])) {
-    call_user_func($_GET['acao']);
 
-} else {
-
-    index(); // Redireciona á index
-
-}
 
 function excluir(){
 
@@ -117,4 +99,15 @@ function excluir(){
     $transportadora->excluirtransportadora($_GET['id_transportadora']);
 
     header('Location: ../../app/controllers/Transportadora.php?acao=listar.php');
+}
+
+
+//rotas
+if (isset($_GET['acao']) and function_exists($_GET['acao'])) {
+    call_user_func($_GET['acao']);
+
+} else {
+
+    index(); // Redireciona á index
+
 }

@@ -3,10 +3,17 @@
 require_once "../cruds/CrudServico.php";
 require_once "../models/Servico.php";
 
-
 //inicia a sessão
 if (!isset($_SESSION)) {
     session_start();
+}
+
+function verifica_login(){
+
+    if (!isset($_SESSION['cod_servico'])) {
+        header('Location: ../../index.html');
+    }
+
 }
 
 
@@ -14,12 +21,31 @@ function index(){
     listar();
 }
 
-function listar(){    //todo trocar listar por perfil
+
+function perfil(){
+
+    verifica_login();
 
     $servicos = new Crudservico();
-    $listaservicos = $servicos->getservicos();
+    $perfil_servico = $servicos->getServico($_SESSION['cod_servico']);
+
+    include __DIR__ . "/../views/Caminhoneiro/info_carga.php";
+}
+
+function sair(){
+    session_destroy();
+    header('Location: ../../index.html');
+
+}
+
+
+function listar(){
+
+    $servicos = new Crudservico();
+    $listaservicos = $servicos->getServicos();
 
     include __DIR__ . "/../views/Servico/servico_listar.php";
+    //header('Location: ../views/Servico/servico_listar.php');
 
 }
 
@@ -66,7 +92,7 @@ function editar(){
 function salvar_editar(){
 
     $servico = new Crudservico();
-    $servico->editar($_POST['numero_seguro'], $_POST['data_entrega'], $_POST['cod_servico'], $_POST['data_cadastro'], $_POST['quantidade'], $_POST['data_retirada'], $_POST['data_retirada_prev'], $_POST['data_entrega_prev'], $_POST['cod_status'], $_POST['cod_cidade'], $_POST['cod_produto']); 
+    $servico->editar($_POST['numero_seguro'], $_POST['data_entrega'], $_POST['cod_servico'], $_POST['data_cadastro'], $_POST['quantidade'], $_POST['data_retirada'], $_POST['data_retirada_prev'], $_POST['data_entrega_prev'], $_POST['cod_status'], $_POST['cod_cidade'], $_POST['cod_produto']);
 }
 
 if (isset($_GET['acao']) and function_exists($_GET['acao'])) {
